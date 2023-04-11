@@ -11,6 +11,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import LogoIcon from "././assets/images/b.jpg";
+import LandingPages from "./pages/LandingPages";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
         </Navbar>
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/landingpages" element={<LandingPages />} />
           <Route exact path="/createpost" element={<CreatePosts />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/signup" element={<SignUp />} />
