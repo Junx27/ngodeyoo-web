@@ -29,7 +29,6 @@ function LandingPages() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
               <NavDropdown
                 className="btn btn-info p-0"
@@ -43,7 +42,7 @@ function LandingPages() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className="container mt-5">
+      {/* <div className="container mt-5">
         <div className="row">
           <div className="col-6">
             <h1>Pusing Menganggur, cari Kerja Disini Aja</h1>
@@ -99,6 +98,56 @@ function LandingPages() {
               </div>
             </div>
           </div>
+        </div>
+      </div> */}
+
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-5 offset-1">
+            <h1>Pusing Menganggur?</h1>
+            <hr />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              reprehenderit excepturi, magnam ut odit odio. Assumenda
+              repellendus inventore minima possimus. Consequatur cumque dolores,
+              voluptates illum suscipit dicta cupiditate eos voluptatum!
+            </p>
+            <button
+              className="btn btn-warning"
+              onClick={() => {
+                navigate("/signup");
+              }}
+            >
+              Mendaftar
+            </button>
+            <button
+              className="btn border-primary mx-5"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              Masuk
+            </button>
+          </div>
+          <div className="col-5">
+            <img src={img1} alt="" />
+          </div>
+        </div>
+        <div className="row align-items-center">
+          <div className="col-5">
+            <img src={img1} alt="" />
+          </div>
+          <div className="col-5 offset-1">
+            <h1>Bingung Cari Kerja?</h1>
+            <hr />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              reprehenderit excepturi, magnam ut odit odio. Assumenda
+              repellendus inventore minima possimus. Consequatur cumque dolores,
+              voluptates illum suscipit dicta cupiditate eos voluptatum!
+            </p>
+          </div>
+          <hr />
         </div>
       </div>
     </div>
