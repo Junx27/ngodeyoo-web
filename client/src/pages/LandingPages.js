@@ -144,7 +144,7 @@ function LandingPages() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
               reprehenderit excepturi, magnam ut odit odio. Assumenda
               repellendus inventore minima possimus. Consequatur cumque dolores,
-              voluptates illum suscipit dicta cupiditate eos voluptatum!
+              voluptates illum suscipit dicta cupiditate eos voluptatmkjih
             </p>
           </div>
           <hr />
