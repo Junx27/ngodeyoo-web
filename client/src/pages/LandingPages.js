@@ -49,10 +49,10 @@ function LandingPages() {
             <h1>Pusing Menganggur</h1>
             <hr />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              accusamus libero! Porro minus assumenda rem non nulla in? Id sit
-              tempora odit quos, aspernatur nulla magnam magni fugit aut
-              voluptates.
+              Iya Kack. ipsum dolor sit amet consectetur adipisicing elit.
+              Quisquam, accusamus libero! Porro minus assumenda rem non nulla
+              in? Id sit tempora odit quos, aspernatur nulla magnam magni fugit
+              aut voluptates.
             </p>
             <button
               className="btn btn-warning"
