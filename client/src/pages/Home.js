@@ -7,7 +7,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import LogoIcon from "../assets/images/b.jpg";
+import LogoIcon from "../assets/images/logo.png";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -22,10 +22,10 @@ function Home() {
       <Navbar bg="light" expand="lg">
         <Container className="container mt-2 d-flex">
           <img
-            className="me-1"
+            className="me-3"
             style={{
-              width: "100px",
-              height: "100px",
+              width: "30px",
+              height: "30px",
             }}
             src={LogoIcon}
             alt=""

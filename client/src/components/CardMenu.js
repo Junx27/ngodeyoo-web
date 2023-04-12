@@ -134,7 +134,7 @@ function CardMenu({ menu }) {
             </div>
           </Button>
           <Button
-            className="badge text-bg-warning text-dark text-truncate  w-100 rounded"
+            className="badge text-bg-primary text-light text-truncate  w-100 rounded"
             variant="primary"
           >
             <div>Apply</div>
