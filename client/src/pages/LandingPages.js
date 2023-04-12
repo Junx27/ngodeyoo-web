@@ -46,7 +46,7 @@ function LandingPages() {
       <div className="container mt-5">
         <div className="row">
           <div className="col-6">
-            <h1>Pusing Menganggur</h1>
+            <h1>Pusing Menganggur, cari Kerja Disini Aja</h1>
             <hr />
             <p>
               Iya Kack. ipsum dolor sit amet consectetur adipisicing elit.
