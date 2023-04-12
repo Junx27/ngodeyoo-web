@@ -6,7 +6,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import LogoIcon from "../assets/images/b.jpg";
-import img2 from "../assets/images/carikerja.jpg";
 
 function LandingPages() {
   let navigate = useNavigate();
@@ -29,7 +28,6 @@ function LandingPages() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
               <NavDropdown
                 className="btn btn-info p-0"
@@ -43,16 +41,17 @@ function LandingPages() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col-6">
-            <h1>Pusing Menganggur, Cari Kerja Disini Aja</h1>
+
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-5 offset-1">
+            <h1>Pusing Menganggur?</h1>
             <hr />
             <p>
-              Iya Kack. ipsum dolor sit amet consectetur adipisicing elit.
-              Quisquam, accusamus libero! Porro minus assumenda rem non nulla
-              in? Id sit tempora odit quos, aspernatur nulla magnam magni fugit
-              aut voluptates.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              reprehenderit excepturi, magnam ut odit odio. Assumenda
+              repellendus inventore minima possimus. Consequatur cumque dolores,
+              voluptates illum suscipit dicta cupiditate eos voluptatum!
             </p>
             <button
               className="btn btn-warning"
@@ -71,30 +70,25 @@ function LandingPages() {
               Masuk
             </button>
           </div>
-          <div className="col-6">
+          <div className="col-5">
             <img src={img1} alt="" />
           </div>
-          <div className="container mt-5">
-            <div className="row mt-5">
-              <div className="col-5 offset-1">
-                <img src={img2} alt="" />
-              </div>
-              <div className="col-5 ms-5">
-                <h1>Susah Cari Pekerjaan</h1>
-                <hr />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quisquam, accusamus libero! Porro minus assumenda rem non
-                  nulla in? Id sit tempora odit quos, aspernatur nulla magnam
-                  magni fugit aut voluptates.
-                </p>
-                <div
-                  className="container bg-info me-5"
-                  style={{ width: "40%", height: "20px" }}
-                ></div>
-              </div>
-            </div>
+        </div>
+        <div className="row align-items-center">
+          <div className="col-5">
+            <img src={img1} alt="" />
           </div>
+          <div className="col-5 offset-1">
+            <h1>Bingung Cari Kerja?</h1>
+            <hr />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              reprehenderit excepturi, magnam ut odit odio. Assumenda
+              repellendus inventore minima possimus. Consequatur cumque dolores,
+              voluptates illum suscipit dicta cupiditate eos voluptatmkjih
+            </p>
+          </div>
+          <hr />
         </div>
       </div>
     </div>
