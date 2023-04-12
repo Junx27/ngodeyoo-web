@@ -1,22 +1,11 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import Pagination from "../components/Pagination";
-import MenuSearch from "../components/MenuSearch";
-import Information from "../components/Information";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import LogoIcon from "../assets/images/b.jpg";
+import Container from "react-bootstrap/Container";
 
-function Home() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3001/posts").then((response) =>
-      response.json().then((data) => setData(data))
-    );
-  });
+function Header() {
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -30,7 +19,7 @@ function Home() {
             src={LogoIcon}
             alt=""
           />
-          <Navbar.Brand className="w-100" href="/landingpages">
+          <Navbar.Brand className="w-100" href="#home">
             <h1>ILOKA</h1>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -51,15 +40,8 @@ function Home() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <MenuSearch />
-      <Pagination data={data} />
-      <div className="container">
-        <hr />
-        <Information />
-      </div>
-      <hr />
     </div>
   );
 }
 
-export default Home;
+export default Header;

@@ -12,9 +12,9 @@ function CreatePosts() {
     username: "",
   };
   const validationSchema = Yup.object().shape({
-    title: Yup.string().required("Masukan Judul Deskripsi"),
-    postText: Yup.string().required("Masukan Text"),
-    username: Yup.string().min(3).required("Masukan Username"),
+    title: Yup.string().required("*Masukan Judul Deskripsi"),
+    postText: Yup.string().required("*Masukan Text"),
+    username: Yup.string().min(3).required("*Masukan Username"),
   });
   const onSubmit = (data) => {
     axios.post("http://localhost:3001/posts", data).then((response) => {
@@ -23,43 +23,64 @@ function CreatePosts() {
     navigate("/");
   };
   return (
-    <div>
-      <h1 className="text-center">Welcome To Create Post</h1>
-      <div className="createPostsPage">
+    <div className="container">
+      <h1 className="text-center mb-5">Welcome To Create Post</h1>
+      <div className="border border-primary  rounded p-5 mt-5">
         <Formik
           initialValues={initialValues}
           onSubmit={onSubmit}
           validationSchema={validationSchema}
         >
-          <Form className="mb-3 container">
-            <label for="exampleFormControlInput1" class="form-label">
-              Title: <ErrorMessage name="title" component="span" />
+          <Form>
+            <label for="inputCreatePosts" className="form-label">
+              Title:
             </label>
-            <Field
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="name@example.com"
+            <br />
+            <ErrorMessage
+              className="text-danger"
+              name="title"
+              component="span"
             />
-            <label>
-              Text Posts: <ErrorMessage name="postText" component="span" />
+            <Field
+              className="form-control mt-3"
+              autocomplete="off"
+              id="inputCreatePosts"
+              name="title"
+              placeholder=""
+            />
+            <label for="inputCreatePosts" className="form-label mt-3">
+              Text Posts:
             </label>
-            <Field
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="name@example.com"
+            <br />
+            <ErrorMessage
+              className="text-danger"
+              name="postText"
+              component="span"
             />
-            <label>
-              Username: <ErrorMessage name="username" component="span" />
+            <Field
+              className="form-control mt-3"
+              autocomplete="off"
+              id="inputCreatePosts"
+              name="postText"
+              placeholder=""
+            />
+            <label for="inputCreatePosts" className="form-label mt-3">
+              Username:
             </label>
-            <Field
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="name@example.com"
+            <br />
+            <ErrorMessage
+              className="text-danger"
+              name="username"
+              component="span"
             />
-            <button type="submit" class="btn btn-primary mt-3">
+            <Field
+              className="form-control mt-3"
+              autocomplete="off"
+              id="inputCreatePosts"
+              name="username"
+              placeholder=""
+            />
+            <button type="submit" className="btn btn-primary mt-5">
               Create Post
             </button>
           </Form>
