@@ -46,7 +46,7 @@ function LandingPages() {
       <div className="container mt-5">
         <div className="row">
           <div className="col-6">
-            <h1>Pusing Menganggur, cari Kerja Disini Aja</h1>
+            <h1>Pusing Menganggur, Cari Kerja Disini Aja</h1>
             <hr />
             <p>
               Iya Kack. ipsum dolor sit amet consectetur adipisicing elit.
@@ -74,10 +74,6 @@ function LandingPages() {
           <div className="col-6">
             <img src={img1} alt="" />
           </div>
-          <div
-            className="container"
-            style={{ width: "40%", height: "20px" }}
-          ></div>
           <div className="container mt-5">
             <div className="row mt-5">
               <div className="col-5 offset-1">
