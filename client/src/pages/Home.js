@@ -14,7 +14,7 @@ function Home() {
     <div>
         {listOfPost.map((values, key) => {
             return (
-            <div className="post">
+            <div className="post" key={values.id}>
                 <div className="title"> <h1>{values.title}</h1></div>
                 <div className="body"> {values.postText} </div>
                 <div className="footer">"Dipublikasikan oleh: {values.username}" </div>
