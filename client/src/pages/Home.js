@@ -12,11 +12,11 @@ import LogoIcon from "../assets/images/logo.png";
 function Home() {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:3001/posts").then((response) =>
-      response.json().then((data) => setData(data))
-    );
-  });
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/posts").then((response) =>
+  //     response.json().then((data) => setData(data))
+  //   );
+  // });
   return (
     <div>
       <Navbar bg="light" expand="lg">
