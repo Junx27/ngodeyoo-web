@@ -6,51 +6,19 @@ import img4 from "../assets/images/applykerja.png";
 import img5 from "../assets/images/kerja.png";
 import img6 from "../assets/images/dapatkerja.png";
 import img7 from "../assets/images/joinus.png";
-import { useNavigate } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import LogoIcon from "../assets/images/b.jpg";
+import Figure from "react-bootstrap/Figure";
+import Info1 from "../components/Info1";
+import "../assets/styles/styles.css";
 
 function LandingPages() {
-  let navigate = useNavigate();
   return (
     <div>
-      <Navbar bg="light" expand="lg">
-        <Container className="container mt-2 d-flex">
-          <img
-            className="me-1"
-            style={{
-              width: "100px",
-              height: "100px",
-            }}
-            src={LogoIcon}
-            alt=""
-          />
-          <Navbar.Brand className="w-100" href="/landingpages">
-            <h1>ILOKA</h1>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/about">About</Nav.Link>
-              <NavDropdown
-                className="btn btn-info p-0"
-                title="Get Started"
-                id="basic-nav-dropdown"
-              >
-                <NavDropdown.Item href="/signup">Registration</NavDropdown.Item>
-                <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
       <div className="container">
         <div className="row align-items-center my-5">
           <div className="col-5 offset-1">
-            <h1 className="text-warning">Pusing Menganggur?</h1>
+            <h1 className="blue font">
+              Pusing <span className="orange">Menganggur?</span>
+            </h1>
             <hr />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
@@ -68,7 +36,9 @@ function LandingPages() {
             <img src={img2} alt="" style={{ width: "500px" }} />
           </div>
           <div className="col-5 offset-1">
-            <h1 className="text-warning">Bingung Cari Kerja?</h1>
+            <h1 className="blue font">
+              <span className="orange">Bingung</span> Cari Kerja?
+            </h1>
             <hr />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
@@ -81,52 +51,91 @@ function LandingPages() {
         </div>
       </div>
       <div className="container mt-3 mb-5">
-        <h1 className="text-center mb-5">
-          Bagaimana Cara Mendapat Kerja di ILOKA?
+        <h1 className="text-center mb-5 font">
+          Bagaimana Cara Mendapat Kerja di{" "}
+          <span className="orange">ILOKA?</span>
         </h1>
         <br />
         <div className="row text-center mb-5">
-          <div className="col-3 ms-5 border border-primary rounded">
-            <h5 className="mt-3 py-2 text-bg-secondary rounded text-light">
-              <h2>1</h2>Cari kerja
+          <div className="col-3 ms-5 border border-warning rounded shadow p-3 mb-5 bg-body grow">
+            <h5 className="mt-3 py-2 bg-purple rounded text-light">
+              <h5 className="btn-orange">1</h5>
+              <hr />
+              Cari kerja
             </h5>
-            <img
-              src={img3}
-              alt=""
-              style={{ width: "250px" }}
-              className="pt-5 pb-3 px-2 rounded"
-            />
+            <Figure>
+              <Figure.Image
+                src={img3}
+                alt=""
+                style={{ width: "250px" }}
+                className="pt-5 pb-3 px-2 rounded"
+              />
+              <Figure.Caption className="text">
+                <hr />
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Necessitatibus vitae voluptatibus sapiente dolor exercitationem
+                incidunt, numquam tempora facilis at labore atque tenetur
+                aliquid, autem nihil voluptatum aliquam, esse veniam quidem.
+              </Figure.Caption>
+            </Figure>
           </div>
-          <div className="col-3 offset-1 border border-primary rounded">
-            <h5 className="mt-3 py-2 text-bg-secondary rounded text-light">
-              <h2>2</h2>Apply Lamaran
+          <div className="col-3 offset-1 border border-warning rounded shadow p-3 mb-5 bg-body grow">
+            <h5 className="mt-3 py-2 bg-purple rounded text-light">
+              <h5 className="btn-orange">2</h5>
+              <hr />
+              Apply Lamaran
             </h5>
-            <img
-              src={img4}
-              alt=""
-              style={{ width: "250px" }}
-              className="pt-5 pb-3 px-2 rounded"
-            />
+            <Figure>
+              <Figure.Image
+                src={img4}
+                alt=""
+                style={{ width: "250px", height: "245px" }}
+                className="pt-5 pb-3 px-2 rounded"
+              />
+              <Figure.Caption className="text">
+                <hr />
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Necessitatibus vitae voluptatibus sapiente dolor exercitationem
+                incidunt, numquam tempora facilis at labore atque tenetur
+                aliquid, autem nihil voluptatum aliquam, esse veniam quidem.
+              </Figure.Caption>
+            </Figure>
           </div>
-          <div className="col-3 offset-1 border border-primary rounded">
-            <h5 className="mt-3 py-2 text-bg-secondary rounded text-light">
-              <h3>3</h3>Kerja
+          <div className="col-3 offset-1 border border-warning rounded shadow p-3 mb-5 bg-body grow">
+            <h5 className="mt-3 py-2 bg-purple rounded text-light">
+              <h5 className="btn-orange">3</h5>
+              <hr />
+              Kerja
             </h5>
-            <img
-              src={img5}
-              alt=""
-              style={{ width: "250px" }}
-              className="pt-5 pb-3 px-2 rounded"
-            />
+            <Figure>
+              <Figure.Image
+                src={img5}
+                alt=""
+                style={{ width: "250px" }}
+                className="pt-5 pb-3 px-2 rounded"
+              />
+              <Figure.Caption className="text">
+                <hr />
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Necessitatibus vitae voluptatibus sapiente dolor exercitationem
+                incidunt, numquam tempora facilis at labore atque tenetur
+                aliquid, autem nihil voluptatum aliquam, esse veniam quidem.
+              </Figure.Caption>
+            </Figure>
           </div>
         </div>
         <hr />
         <div className="container text-center my-5">
-          <h1>
-            Temukan Pekerjaan Impianmu{" "}
-            <span className="text-warning">Sekarang Juga</span>
+          <h1 className="font">
+            <span className="orange">Temukan Pekerjaan</span>
+            <br />
+            Impianmu
+            <span className="blue"> Sekarang Juga</span>
             <img src={img6} alt="" />
-            <h2>Bersama Perusahaan Berkualitas Penyedia Lowongan Kerja</h2>
+            <h2>
+              Bersama Perusahaan Berkualitas <br />
+              <span className="orange">Penyedia Lowongan Kerja</span>
+            </h2>
           </h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum,
@@ -134,37 +143,24 @@ function LandingPages() {
             accusamus quisquam, illo id libero facere sequi asperiores quis
             natus impedit molestias, fugit alias?
           </p>
-          <button className="btn btn-warning text-light px-5">
+          <button className="border-0 bg-pink text-light px-5">
             Tidak Dipungut Biaya Sepersenpun
           </button>
         </div>
         <hr />
-        <div className="container mt-5">
+        <div className="container">
           <div className="row align-items-center">
             <div className="col-6">
-              <h1>Yuk Gabung</h1>
+              <h1 className="font">
+                Yuk Ga<span className="orange">bung</span>
+              </h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Aspernatur sint ipsa nihil exercitationem adipisci maxime,
                 consectetur quam dolores quidem eius temporibus distinctio fuga
                 similique! Cum, voluptatem! Ipsum nisi nulla magni.
               </p>
-              <button
-                className="btn btn-warning"
-                onClick={() => {
-                  navigate("/signup");
-                }}
-              >
-                Mendaftar
-              </button>
-              <button
-                className="btn border-primary mx-5"
-                onClick={() => {
-                  navigate("/login");
-                }}
-              >
-                Masuk
-              </button>
+              <Info1 />
             </div>
             <div className="col-5 offset-1">
               <img src={img7} alt="" style={{ width: "400px" }} />

@@ -6,7 +6,9 @@ function About() {
     <div className="container">
       <div className="row align-items-center">
         <div className="col-5 offset-1">
-          <h1>About ILOKA</h1>
+          <h1 className="blue font">
+            About <span className="orange">ILOKA</span>
+          </h1>
           <hr />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
@@ -34,7 +36,9 @@ function About() {
           ></Player>
         </div>
         <div className="col-5 offset-1">
-          <h1>Tentang Kami</h1>
+          <h1 className="blue font">
+            <span className="orange">Tentang</span> Kami
+          </h1>
           <hr />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
@@ -47,7 +51,9 @@ function About() {
       </div>
       <div className="row align-items-center">
         <div className="col-5 offset-1">
-          <h1>Kelebihan ILOKA</h1>
+          <h1 className="blue font">
+            Kelebihan <span className="orange">ILOKA</span>
+          </h1>
           <hr />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
@@ -75,7 +81,9 @@ function About() {
           ></Player>
         </div>
         <div className="col-5 offset-1">
-          <h1>Yuk Bergabung</h1>
+          <h1 className="blue font">
+            Yuk Berga<span className="orange">bung</span>
+          </h1>
           <hr />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
