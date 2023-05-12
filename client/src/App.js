@@ -10,73 +10,26 @@ import Registration from "./pages/Registration";
 import CreatePost from "./pages/CreatePost";
 import LandingPages from "./pages/LandingPages";
 import ProfilCompany from "./pages/ProfileCompany";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import logoimg from "././assets/images/logo.png";
-import ProfileCompany from "./pages/ProfileCompany";
+import Header from "./components/Header";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
     <div>
-      <Navbar sticky="top" bg="light" expand="lg">
-        <Container className="container d-flex">
-          <img
-            className="me-3"
-            style={{
-              width: "40px",
-              height: "auto",
-            }}
-            src={logoimg}
-            alt=""
-          />
-          <Navbar.Brand href="/landingpages">
-            <h1 className="font mt-2">
-              IL<span className="orange">OK</span>A
-            </h1>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link className="text-hover" href="/">
-                Beranda
-              </Nav.Link>
-              <Nav.Link className="text-hover" href="/createpost">
-                Create
-              </Nav.Link>
-              <Nav.Link className="text-hover" href="/about">
-                About
-              </Nav.Link>
-              <Nav.Link className="text-hover" href="/profile">
-                Profile
-              </Nav.Link>
-              <Nav.Link className="text-hover" href="/profilecompany">
-                Profile Company
-              </Nav.Link>
-              <Nav.Link className="text-hover" href="/info">
-                Info
-              </Nav.Link>
-            </Nav>
-            <Nav>
-              <Nav.Link className="bg-orange-hover bg-orange" href="/login">
-                Get Started
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <Header />
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/home" element={<Home />} />
           <Route exact path="/signup" element={<SignUp />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/createpost" element={<CreatePost />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/registration" element={<Registration />} />
-          <Route exact path="/landingpages" element={<LandingPages />} />
+          <Route exact path="/" element={<LandingPages />} />
           <Route exact path="/profile" element={<Profile />} />
-          <Route exact path="/profilecompany" element={<ProfileCompany />} />
+          <Route exact path="/profilecompany" element={<ProfilCompany />} />
           <Route exact path="/info" element={<Info />} />
+          <Route exact path="/contact" element={<Contact />} />
         </Routes>
       </Router>
       <div className="container">
@@ -114,7 +67,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="text-muted-footer text-center mt-3 mb-3">
+      <div className="text-muted-footer text-center mt-3">
         Copyright@ILOKA2023
       </div>
     </div>

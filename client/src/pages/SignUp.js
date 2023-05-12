@@ -2,44 +2,43 @@ import React, { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
 
 function SignUp() {
-  const [fetchError, setFetchError] = useState(null);
-  const [productList, setProductList] = useState(null);
+  const [post, setPost] = useState();
+  const [session, setSession] = useState(null);
 
   useEffect(() => {
-    const fetchProductList = async () => {
-      const { data, error } = await supabase.from("Tunjangan_id").select("*");
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
 
-      if (error) {
-        setFetchError("Tidak Dapat mengambil data");
-        setProductList(null);
-        console.log(error);
-      }
-      if (data) {
-        setProductList(data);
-        console.log(data);
-        setFetchError(null);
-      }
-    };
-    fetchProductList();
+    return () => subscription.unsubscribe();
   }, []);
+
+  function handlePost(e) {
+    setPost(e.target.value);
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const { data } = await supabase.from("post").insert([
+      {
+        post,
+        user_id: session.user.id,
+      },
+    ]);
+  }
 
   return (
     <div>
-      This is Home Pages
-      <div>
-        {fetchError && <p>{fetchError}</p>}
-        {productList && (
-          <div className="user">
-            {productList.map((user) => (
-              <div key={user.id}>
-                <div className="text-primary">
-                  metode pembayaran: {user.nama}
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      <label htmlFor="">post</label>
+      <br />
+      <input type="text" value={post} onChange={handlePost} />
+      <button onClick={handleSubmit}>submit</button>
     </div>
   );
 }

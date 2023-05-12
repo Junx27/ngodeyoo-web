@@ -1,11 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import supabase from "../config/supabaseClient";
+import Modal from "react-bootstrap/Modal";
 
 function Registration() {
   let navigate = useNavigate();
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => {
+    setShow(false);
+    navigate("/login");
+  };
+  const handleShow = () => setShow(true);
+
+  const [username, setUserName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [formError, setFormError] = useState(null);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!username) {
+      setFormError("Masukan User");
+      return;
+    }
+    if (!email) {
+      setFormError("Masukan Email");
+      return;
+    }
+    if (!password) {
+      setFormError("Masukan Password");
+      return;
+    }
+
+    const { error } = await supabase.from("user").insert([
+      {
+        username,
+        email,
+        password,
+      },
+    ]);
+    const { data } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+      data: {
+        username: username,
+      },
+    });
+    if (error) {
+      console.log(error);
+      setFormError("ada yang salah");
+    }
+    if (data) {
+      console.log(data);
+      setFormError(null);
+      handleShow();
+    }
+  }
+
   return (
     <div className="container w-50 mt-5">
       <h1 className="text-center mt-3 blue font">
@@ -13,31 +69,35 @@ function Registration() {
       </h1>
       <hr />
       <Form className="border border-warning  rounded p-5 mt-5 shadow p-3 mb-5 bg-body">
+        <p className="mb-3 span">{formError}</p>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Username</Form.Label>
-          <Form.Control type="email" placeholder="Enter Username" />
+          <Form.Label>FullName</Form.Label>
+          <Form.Control
+            type="email"
+            value={username}
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Confirm Password</Form.Label>
-          <Form.Control type="password" placeholder="Confirm Password" />
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button
-          variant="primary"
-          type="submit"
-          onClick={() => navigate("/signup")}
-        >
+        <Button variant="primary" type="submit" onClick={handleSubmit}>
           Registration
         </Button>
         <Form.Text className="text-muted d-flex flex-column mb-3 mt-3">
@@ -47,6 +107,17 @@ function Registration() {
           Login
         </button>
       </Form>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Registration Berhasil</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Apakah Anda Ingin Melanjutkan untuk login</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            Login
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
