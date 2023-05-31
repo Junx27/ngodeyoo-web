@@ -2,21 +2,24 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SignUp from "./pages/SignUp";
 import About from "./pages/About";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import Login from "./pages/user/Login";
+import Home from "./pages/user/Home";
+import HomeAdmin from "./pages/admin/HomeAdmin";
+import Profile from "./pages/user/Profile";
 import Info from "./pages/Info";
-import Registration from "./pages/Registration";
-import CreatePost from "./pages/CreatePost";
+import Registration from "./pages/user/Registration";
+import CreatePost from "./pages/admin/CreatePost";
 import LandingPages from "./pages/LandingPages";
-import ProfilCompany from "./pages/ProfileCompany";
-import Header from "./components/Header";
+import ProfilCompany from "./pages/admin/ProfileCompany";
 import Contact from "./pages/Contact";
-
+import facebook from "./assets/images/facebook.png";
+import instagram from "./assets/images/instagram.png";
+import whatsapp from "./assets/images/whatsapp.png";
+import line from "./assets/images/line.png";
+import Admin from "./pages/admin/LoginAdmin";
 function App() {
   return (
     <div>
-      <Header />
       <Router>
         <Routes>
           <Route exact path="/home" element={<Home />} />
@@ -30,39 +33,54 @@ function App() {
           <Route exact path="/profilecompany" element={<ProfilCompany />} />
           <Route exact path="/info" element={<Info />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/admin" element={<Admin />} />
+          <Route exact path="/homeadmin" element={<HomeAdmin />} />
         </Routes>
       </Router>
       <div className="container">
         <div className="row text-start mt-5">
           <hr />
-          <div className="col-3 offset-2">
+          <div className="col-3">
             <h5 className="orange">ILOKA</h5>
-            <br />
-            <p className="blue ms-1">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. In ut
-              unde numquam quaerat nostrum molestias expedita! Sit, cum. Non
-              explicabo doloribus fuga sed labore pariatur quas unde enim!
-              Laudantium, rerum!
+            <p className="blue fw-light mt-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              cupiditate temporibus, nulla nostrum quae ipsum? Accusamus enim
+              perferendis corrupti maiores obcaecati? Animi odio quo veritatis
+              ducimus, obcaecati eveniet voluptatem aperiam.
             </p>
           </div>
-          <div className="col-3 ms-4">
+          <div className="col-3">
+            <h5 className="orange">Alamat</h5>
+            <p className="blue fw-light mt-3">
+              Jl. Letnan Jenderal S Parman No.55, Kedung Menjangan, Bancar, Kec.
+              Purbalingga, Kabupaten Purbalingga, Jawa Tengah 53316
+            </p>
+          </div>
+          <div className="col-3">
             <h5 className="orange">Hubungi Kami</h5>
-            <br />
-            <div className="blue">
+            <div className="blue fw-light mt-3">
               <div>Email: iloka@gmail.com</div>
               <div>Tlp: 0987 1234 7876</div>
+              <div>Sosial Media:</div>
+              <div className="mt-2">
+                <img className="sosial-media me-2" src={whatsapp} alt="" />
+                <img className="sosial-media me-2" src={facebook} alt="" />
+                <img className="sosial-media me-2" src={instagram} alt="" />
+                <img className="sosial-media me-2" src={line} alt="" />
+              </div>
             </div>
           </div>
-          <div className="col-3 ms-4">
+          <div className="col-3">
             <h5 className="orange">Developer</h5>
-            <br />
-            <div className="blue">
-              <div>Senna Bhany Majid</div>
-              <div>Ikshan Sulstyo Pambudi</div>
-              <div>Sri Haryani</div>
-              <div>Mizan Eka Putra</div>
-              <div>Tri Saptono</div>
-              <div>Muhamad Asvul Annas</div>
+            <div className="blue fw-light mt-3">
+              <ul>
+                <li>Senna Bhany Majid</li>
+                <li>Ikshan Sulstyo Pambudi</li>
+                <li>Sri Haryani</li>
+                <li>Mizan Eka Putra</li>
+                <li>Tri Saptono</li>
+                <li>Muhamad Asvul Annas</li>
+              </ul>
             </div>
           </div>
         </div>

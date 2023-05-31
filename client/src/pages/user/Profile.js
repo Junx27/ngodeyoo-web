@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import logoprofile from "../assets/images/profil3.jpg";
-import backgroundlogo from "../assets/images/backgroundprofile.png";
-import facebook from "../assets/images/facebook.png";
-import instagram from "../assets/images/instagram.png";
-import whatsapp from "../assets/images/whatsapp.png";
-import line from "../assets/images/line.png";
-import tiktok from "../assets/images/tiktok.png";
-import supabase from "../config/supabaseClient";
-import LoginSession from "../components/LoginSession";
+import logoprofile from "../../assets/images/profil3.jpg";
+import backgroundlogo from "../../assets/images/backgroundprofile.png";
+import facebook from "../../assets/images/facebook.png";
+import instagram from "../../assets/images/instagram.png";
+import whatsapp from "../../assets/images/whatsapp.png";
+import line from "../../assets/images/line.png";
+import tiktok from "../../assets/images/tiktok.png";
+import LoginSession from "../../components/LoginSession";
+import supabase from "../../config/supabaseClient";
+import Header from "../../components/Header";
 
 function Profile() {
   const [session, setSession] = useState();
@@ -21,6 +22,7 @@ function Profile() {
   }, []);
   return (
     <>
+      <Header />
       {session ? (
         <div className="container position-relative">
           <div className="row">

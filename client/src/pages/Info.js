@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import supabase from "../config/supabaseClient";
-import LoginSession from "../components/LoginSession";
+import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 function Info() {
+  let navigate = useNavigate();
   const [session, setSession] = useState();
 
   useEffect(() => {
@@ -15,9 +17,14 @@ function Info() {
     });
   }, []);
 
+  if (!session) {
+    navigate("/login");
+  }
+
   return (
-    <div className="container mt-5">
-      {session ? (
+    <>
+      <Header />
+      <div className="container mt-5">
         <div className="row">
           <div className="col-4 me-1 ms-5">
             <h5 className="orange">Informasi ILOKA</h5>
@@ -85,12 +92,8 @@ function Info() {
             </div>
           </div>
         </div>
-      ) : (
-        <>
-          <LoginSession />
-        </>
-      )}
-    </div>
+      </div>
+    </>
   );
 }
 

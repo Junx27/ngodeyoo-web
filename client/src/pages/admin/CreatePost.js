@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import supabase from "../config/supabaseClient";
-import LoginSession from "../components/LoginSession";
+import supabase from "../../config/supabaseClientAdmin";
+import { useNavigate } from "react-router-dom";
+import Header from "../../components/HeaderAdmin";
 
 function CreatePost() {
+  let navigate = useNavigate();
   const [session, setSession] = useState();
 
   useEffect(() => {
@@ -14,9 +16,14 @@ function CreatePost() {
       setSession(session);
     });
   }, []);
+
+  if (!session) {
+    navigate("/login");
+  }
   return (
-    <div className="container">
-      {session ? (
+    <>
+      <Header />
+      <div className="container">
         <div className="container mt-5" style={{ width: "800px" }}>
           <h1 className="font text-center blue">
             Create <span className="orange">New Job</span>
@@ -76,12 +83,8 @@ function CreatePost() {
             </div>
           </Form>
         </div>
-      ) : (
-        <>
-          <LoginSession />
-        </>
-      )}
-    </div>
+      </div>
+    </>
   );
 }
 

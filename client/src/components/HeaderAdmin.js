@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import logoimg from "../assets/images/logo.png";
 import { useEffect, useState } from "react";
-import supabase from "../config/supabaseClient";
+import supabase from "../config/supabaseClientAdmin";
 import ProfileName from "./ProfileName";
 
 function Header() {
@@ -46,14 +46,14 @@ function Header() {
             <Nav className="me-auto">
               {session ? (
                 <>
-                  <Nav.Link className="text-hover" href="/home">
+                  <Nav.Link className="text-hover" href="/homeadmin">
                     Beranda
                   </Nav.Link>
-                  <Nav.Link className="text-hover" href="/profile">
-                    Profile
+                  <Nav.Link className="text-hover" href="/createpost">
+                    Create
                   </Nav.Link>
-                  <Nav.Link className="text-hover" href="/info">
-                    Info
+                  <Nav.Link className="text-hover" href="/profilecompany">
+                    Profile Company
                   </Nav.Link>
                 </>
               ) : (
