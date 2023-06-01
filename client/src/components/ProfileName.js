@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
+import { BsPersonCircle } from "react-icons/bs";
 
 const supabase = createClient(
   "https://rhmjeleyaoxxsomfutfr.supabase.co",
@@ -8,6 +9,20 @@ const supabase = createClient(
 
 export default function PrifileName() {
   const [session, setSession] = useState(null);
+  const [profile, setProfile] = useState();
+  useEffect(() => {
+    fetchProfile();
+  }, [fetchProfile]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  async function fetchProfile() {
+    const { data: profile } = await supabase
+      .from("profile")
+      .select("*")
+      .eq("user_id", session.user.id);
+
+    setProfile(profile);
+  }
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -25,6 +40,16 @@ export default function PrifileName() {
   if (!session) {
     return <div></div>;
   } else {
-    return <div className="blue font me-4">{session.user.email}</div>;
+    return (
+      <div className="orange font_profile me-2">
+        {profile &&
+          profile.map((profile) => (
+            <>
+              <BsPersonCircle className="me-3 icon" />
+              {profile.nama_panggilan}
+            </>
+          ))}
+      </div>
+    );
   }
 }

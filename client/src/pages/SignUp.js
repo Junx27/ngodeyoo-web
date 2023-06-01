@@ -65,6 +65,7 @@ function SignUp() {
       <button onClick={handleLogin}>login</button>
       <button onClick={handleCreateAdmin}>Create Admin</button>
       <button onClick={handleSignOut}>Signout</button>
+      <i class="bi bi-person-circle">test</i>
     </div>
   );
 }
