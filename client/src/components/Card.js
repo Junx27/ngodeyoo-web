@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import sample_image from "../assets/images/sample_images.jpeg";
+import supabase from "../config/supabaseClientAdmin";
 
 function Card({ posts }) {
   return (
@@ -19,27 +20,42 @@ function Card({ posts }) {
           <div className="text-start">
             <h5 className="orange">Description</h5>
             <hr />
-            <>Gaji : {posts.gaji} </>
+            <>
+              Gaji : <span className="font blue">{posts.gaji}</span>
+            </>
             <br />
             <br />
-            <>Tunjangan : {posts.tunjangan} </>
+            <>
+              Tunjangan : <span className="font blue">{posts.tunjangan}</span>
+            </>
             <br />
             <br />
-            <>Quantity : {posts.quantity}</>
+            <>
+              Quantity : <span className="font blue">{posts.quantity}</span>
+            </>
             <br />
             <br />
             <h5 className="orange">Persyaratan : </h5>
             <hr />
-            <>Jenis Kelamin : {posts.jenis_kelamin}</>
+            <>
+              Jenis Kelamin :{" "}
+              <span className="font blue">{posts.jenis_kelamin}</span>
+            </>
             <br />
             <br />
-            <>Usia : {posts.usia}</>
+            <>
+              Usia : <span className="font blue">{posts.usia}</span>
+            </>
             <br />
             <br />
-            <>Lulusan : {posts.lulusan}</>
+            <>
+              Lulusan : <span className="font blue">{posts.lulusan}</span>
+            </>
             <br />
             <br />
-            <>Skill : {posts.skill}</>
+            <>
+              Skill : <span className="font blue">{posts.skill}</span>
+            </>
             <br />
             <br />
           </div>

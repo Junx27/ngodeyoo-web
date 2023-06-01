@@ -11,7 +11,6 @@ function Home() {
   const [session, setSession] = useState();
 
   const [posts, setPosts] = useState();
-
   useEffect(() => {
     fetchPosts();
   }, []);
@@ -67,12 +66,12 @@ function Home() {
                     Daftar Lowongan <span className="orange">Pekerjaan</span>
                   </h4>
                   <hr />
-                  <div className="shadow p-3 mb-5">
-                    {posts &&
-                      posts.map((posts) => (
+                  {posts &&
+                    posts.map((posts) => (
+                      <div className="shadow p-3 mb-5">
                         <Card key={posts.id} posts={posts} />
-                      ))}
-                  </div>
+                      </div>
+                    ))}
                 </div>
               </div>
             </>

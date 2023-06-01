@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import logoimg from "../assets/images/logo.png";
 import { useEffect, useState } from "react";
 import supabase from "../config/supabaseClientAdmin";
-import ProfileName from "./ProfileName";
+import ProfileName from "./ProfileNameAdmin";
 
 function Header() {
   const [session, setSession] = useState();

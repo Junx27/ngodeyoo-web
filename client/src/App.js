@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Login from "./pages/user/Login";
 import Home from "./pages/user/Home";
 import HomeAdmin from "./pages/admin/HomeAdmin";
+import CreateProfile from "./pages/admin/CreateProfile";
 import Profile from "./pages/user/Profile";
 import Info from "./pages/Info";
 import Registration from "./pages/user/Registration";
@@ -35,6 +36,7 @@ function App() {
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/admin" element={<Admin />} />
           <Route exact path="/homeadmin" element={<HomeAdmin />} />
+          <Route exact path="/createprofile" element={<CreateProfile />} />
         </Routes>
       </Router>
       <div className="container">

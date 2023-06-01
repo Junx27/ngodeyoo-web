@@ -97,7 +97,8 @@ function CreatePost() {
             >
               <option>-</option>
               <option value="BPJS"> BPJS</option>
-              <option value="THR">THT</option>
+              <option value="THT">THT</option>
+              <option value="BPJS & THT">BPJS & THT</option>
             </Form.Select>
             <Form.Group className="mb-3 mt-3">
               <Form.Label>Quantity</Form.Label>
@@ -159,12 +160,18 @@ function CreatePost() {
             </Form.Group>
             <Form.Group className="mb-3 mt-3">
               <Form.Label>Published</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder=""
+              <Form.Select
+                className="mb-3"
                 value={nama_perusahaan}
                 onChange={(e) => setPublished(e.target.value)}
-              />
+              >
+                <option>-</option>
+                <option value="PT. Royal Korindah">PT. Royal Korindah</option>
+                <option value="PT. Boyang Industrial">
+                  PT. Boyang Industrial
+                </option>
+                <option value="PT.Yuro Mustika">PT.Yuro Mustika</option>
+              </Form.Select>
             </Form.Group>
             <div className="mb-3 mt-5 d-flex justify-content-end">
               <Button type="submit" onClick={createPost}>

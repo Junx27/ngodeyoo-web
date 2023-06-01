@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function SignUp() {
   let navigate = useNavigate();
-  const [judul_pekerjaan, setPost] = useState();
+  const [nama, setPost] = useState();
   const [session, setSession] = useState(null);
 
   useEffect(() => {
@@ -27,9 +27,9 @@ function SignUp() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const { data } = await supabase.from("posts").insert([
+    const { data } = await supabase.from("profile").insert([
       {
-        judul_pekerjaan,
+        nama,
         user_id: session.user.id,
       },
     ]);
@@ -58,7 +58,7 @@ function SignUp() {
     <div>
       <label htmlFor="">post</label>
       <br />
-      <input type="text" value={judul_pekerjaan} onChange={handlePost} />
+      <input type="text" value={nama} onChange={handlePost} />
       <button onClick={handleSubmit}>submit</button>
       <br />
       <br />
