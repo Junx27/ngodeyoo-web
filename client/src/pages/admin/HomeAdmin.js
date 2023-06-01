@@ -13,10 +13,11 @@ function Home() {
   const [posts, setPosts] = useState();
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [fetchPosts]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   async function fetchPosts() {
-    const { data: posts, error } = await supabase.from("posts").select("*");
+    const { data: posts } = await supabase.from("posts").select("*");
 
     setPosts(posts);
   }
