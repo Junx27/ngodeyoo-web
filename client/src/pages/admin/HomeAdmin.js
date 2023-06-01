@@ -10,6 +10,18 @@ function Home() {
   let navigate = useNavigate();
   const [session, setSession] = useState();
 
+  const [posts, setPosts] = useState();
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  async function fetchPosts() {
+    const { data: posts, error } = await supabase.from("posts").select("*");
+
+    setPosts(posts);
+  }
+
   useEffect(() => {
     setSession(supabase.auth.getSession());
 
@@ -17,6 +29,8 @@ function Home() {
       setSession(session);
     });
   }, []);
+
+  console.log(posts);
   return (
     <>
       <Header />
@@ -54,16 +68,10 @@ function Home() {
                   </h4>
                   <hr />
                   <div className="shadow p-3 mb-5">
-                    <Card />
-                  </div>
-                  <div className="shadow p-3 mb-5">
-                    <Card />
-                  </div>
-                  <div className="shadow p-3 mb-5">
-                    <Card />
-                  </div>
-                  <div className="shadow p-3 mb-5">
-                    <Card />
+                    {posts &&
+                      posts.map((posts) => (
+                        <Card key={posts.id} posts={posts} />
+                      ))}
                   </div>
                 </div>
               </div>

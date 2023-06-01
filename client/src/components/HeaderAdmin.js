@@ -22,7 +22,6 @@ function Header() {
     const { data } = supabase.auth.signOut();
     console.log(data);
   }
-
   return (
     <div>
       <Navbar sticky="top" bg="light" expand="lg">
