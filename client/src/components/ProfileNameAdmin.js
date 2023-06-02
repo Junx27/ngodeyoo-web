@@ -15,12 +15,12 @@ export default function PrifileName() {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   async function fetchProfile() {
-    const { data: profile } = await supabase
+    const { data } = await supabase
       .from("profile")
       .select("*")
       .eq("user_id", session.user.id);
 
-    setProfile(profile);
+    setProfile(data);
   }
   const [session, setSession] = useState(null);
 
@@ -45,7 +45,7 @@ export default function PrifileName() {
         {profile &&
           profile.map((profile) => (
             <>
-              <BsPersonCircle className="me-3 icon" />
+              <BsPersonCircle key={profile.id} className="me-3 icon" />
               {profile.nama}
             </>
           ))}

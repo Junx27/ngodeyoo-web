@@ -31,11 +31,29 @@ function CreatePost() {
         lulusan,
         tinggi_badan,
         skill,
-        nama_perusahaan,
+        nama_perusahaan: profile,
         user_id: session.user.id,
       },
     ]);
     navigate("/homeadmin");
+  }
+
+  const [profile, setProfile] = useState();
+  useEffect(() => {
+    fetchProfile();
+  }, [fetchProfile]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  async function fetchProfile() {
+    const { data } = await supabase
+      .from("profile")
+      .select("*")
+      .eq("user_id", session.user.id)
+      .single();
+
+    if (data) {
+      setProfile(data?.nama);
+    }
   }
 
   let navigate = useNavigate();
@@ -160,18 +178,7 @@ function CreatePost() {
             </Form.Group>
             <Form.Group className="mb-3 mt-3">
               <Form.Label>Published</Form.Label>
-              <Form.Select
-                className="mb-3"
-                value={nama_perusahaan}
-                onChange={(e) => setPublished(e.target.value)}
-              >
-                <option>-</option>
-                <option value="PT. Royal Korindah">PT. Royal Korindah</option>
-                <option value="PT. Boyang Industrial">
-                  PT. Boyang Industrial
-                </option>
-                <option value="PT.Yuro Mustika">PT.Yuro Mustika</option>
-              </Form.Select>
+              <Form.Control type="text" placeholder="" value={profile} />
             </Form.Group>
             <div className="mb-3 mt-5 d-flex justify-content-end">
               <Button type="submit" onClick={createPost}>

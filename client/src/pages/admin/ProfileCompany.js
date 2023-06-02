@@ -64,13 +64,15 @@ function ProfileCompany() {
           />
 
           {nama &&
-            nama.map((profile) => (
-              <div>
-                <h5 className="orange">{profile.nama}</h5>
-                <hr />
-                <p className="text-muted">{profile.alamat}</p>
-              </div>
-            ))}
+            nama.map((profile) => {
+              return (
+                <div key={profile.id}>
+                  <h5 className="orange">{profile.nama}</h5>
+                  <hr />
+                  <p className="text-muted">{profile.alamat}</p>
+                </div>
+              );
+            })}
 
           <div className="d-flex justify-content-end">
             <button

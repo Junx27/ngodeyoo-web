@@ -57,7 +57,7 @@ function Profile() {
               {profile &&
                 profile.map((profile) => (
                   <>
-                    <div className="name">
+                    <div className="name" key={profile.id}>
                       {profile.nama}
                       <hr />
                     </div>
@@ -123,7 +123,7 @@ function Profile() {
             <div className="col-3 ms-3 pt-3">
               {profile &&
                 profile.map((profile) => (
-                  <div>
+                  <div key={profile.id}>
                     <h5 className="biodata orange">Biodata</h5>
                     <hr />
                     Tempat/Tgl Lahir:{" "}
