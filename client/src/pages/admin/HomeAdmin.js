@@ -5,8 +5,9 @@ import supabase from "../../config/supabaseClientAdmin";
 import { useNavigate } from "react-router-dom";
 import LoginSession from "../../components/LoginSession";
 import Header from "../../components/HeaderAdmin";
+import LogoutSession from "../LogoutSession";
 
-function Home() {
+function HomeAdmin() {
   let navigate = useNavigate();
   const [session, setSession] = useState();
 
@@ -68,15 +69,15 @@ function Home() {
                   <hr />
                   {posts &&
                     posts.map((posts) => (
-                      <div className="shadow p-3 mb-5">
-                        <Card key={posts.id} posts={posts} />
+                      <div className="shadow p-3 mb-5" key={posts.id}>
+                        <Card posts={posts} />
                       </div>
                     ))}
                 </div>
               </div>
             </>
           ) : (
-            <LoginSession />
+            <LogoutSession />
           )}
         </>
       </div>
@@ -84,4 +85,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeAdmin;

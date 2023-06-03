@@ -28,7 +28,7 @@ function SignUp() {
       setProfile(data?.nama);
     }
   }
-  console.log(profile);
+  console.log(profile?.user_id);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -99,8 +99,11 @@ function SignUp() {
         onChange={(e) => setGambar(e.target.value)}
       >
         <option></option>
-        <option value={img}>facebook</option>
+        <option type="image" src={img} value={gambar}>
+          facebook
+        </option>
         <option value={img1}>instagram</option>
+        {gambar}
       </Form.Select>
     </div>
   );

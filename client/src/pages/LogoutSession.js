@@ -9,12 +9,10 @@ import img7 from "../assets/images/joinus.png";
 import Figure from "react-bootstrap/Figure";
 import Info1 from "../components/Info1";
 import "../assets/styles/styles.css";
-import Header from "../components/Header";
 
 function LandingPages() {
   return (
     <>
-      <Header />
       <div className="container">
         <div className="session">
           <div className="container">

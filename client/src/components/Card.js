@@ -36,7 +36,8 @@ function Card({ posts }) {
             <br />
             <br />
             <>
-              Quantity : <span className="font blue">{posts.quantity}</span>
+              Quantity :{" "}
+              <span className="font blue">{posts.quantity} Orang</span>
             </>
             <br />
             <br />
