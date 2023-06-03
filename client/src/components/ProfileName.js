@@ -41,7 +41,7 @@ export default function ProfileName() {
           profile.map((profile) => (
             <div key={profile.id}>
               <BsPersonCircle className="me-3 icon" />
-              <div>{profile.nama_panggilan}</div>
+              <>{profile.nama_panggilan}</>
             </div>
           ))}
       </div>

@@ -3,7 +3,6 @@ import BerandaEvent from "../../components/BerandaEvent";
 import Card from "../../components/Card";
 import supabase from "../../config/supabaseClientAdmin";
 import { useNavigate } from "react-router-dom";
-import LoginSession from "../../components/LoginSession";
 import Header from "../../components/HeaderAdmin";
 import LogoutSession from "../LogoutSession";
 

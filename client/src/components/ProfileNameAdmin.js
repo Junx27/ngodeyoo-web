@@ -33,7 +33,6 @@ export default function ProfileNameCompany() {
   }, []);
 
   if (!session) {
-    return <div></div>;
   } else {
     return (
       <div className="orange font_profile me-2">

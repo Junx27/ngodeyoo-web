@@ -19,6 +19,7 @@ import instagram from "./assets/images/instagram.png";
 import whatsapp from "./assets/images/whatsapp.png";
 import line from "./assets/images/line.png";
 import Admin from "./pages/admin/LoginAdmin";
+import ConfirmLogout from "./pages/ConfirmLogout";
 function App() {
   return (
     <div>
@@ -38,6 +39,7 @@ function App() {
           <Route exact path="/admin" element={<Admin />} />
           <Route exact path="/homeadmin" element={<HomeAdmin />} />
           <Route exact path="/createprofile" element={<CreateProfile />} />
+          <Route exact path="/logout" element={<ConfirmLogout />} />
           <Route
             exact
             path="/createprofileuser"

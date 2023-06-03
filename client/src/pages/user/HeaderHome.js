@@ -6,6 +6,7 @@ import logoimg from "../../assets/images/logo.png";
 import ProfileName from "../../components/ProfileName";
 import { BsBoxArrowRight } from "react-icons/bs";
 import supabase from "../../config/supabaseClient";
+import Logout from "../../components/LogoutUser";
 
 function HeaderHome() {
   const [session, setSession] = useState(null);
@@ -76,13 +77,7 @@ function HeaderHome() {
             <Nav>
               {session ? (
                 <>
-                  <button
-                    className="icon btn mb-2"
-                    href="/"
-                    onClick={handleLogOut}
-                  >
-                    <BsBoxArrowRight />
-                  </button>
+                  <Logout />
                 </>
               ) : (
                 <Nav.Link className="bg-orange-hover bg-orange" href="/login">

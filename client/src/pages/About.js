@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
-import LoginSession from "../components/LoginSession";
 import Header from "../components/Header";
 
 function About() {

@@ -6,7 +6,6 @@ import instagram from "../../assets/images/instagram.png";
 import whatsapp from "../../assets/images/whatsapp.png";
 import line from "../../assets/images/line.png";
 import tiktok from "../../assets/images/tiktok.png";
-import LoginSession from "../../components/LoginSession";
 import supabase from "../../config/supabaseClient";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";

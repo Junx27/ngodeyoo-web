@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
 import ProfileName from "./ProfileName";
 import { BsBoxArrowRight } from "react-icons/bs";
+import Logout from "./LogoutUser";
 
 function Header() {
   const [session, setSession] = useState();
@@ -75,13 +76,7 @@ function Header() {
             <Nav>
               {session ? (
                 <>
-                  <button
-                    className="icon btn mb-2"
-                    href="/"
-                    onClick={handleLogOut}
-                  >
-                    <BsBoxArrowRight />
-                  </button>
+                  <Logout />
                 </>
               ) : (
                 <Nav.Link className="bg-orange-hover bg-orange" href="/login">
