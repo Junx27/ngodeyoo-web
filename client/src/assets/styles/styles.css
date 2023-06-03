@@ -176,6 +176,11 @@
     margin-left: 80px;
     padding-bottom: 10px;
   }
+  .pop {
+    margin-left: 55px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 .text-muted-footer {
   color: white;

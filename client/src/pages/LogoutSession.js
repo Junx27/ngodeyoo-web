@@ -9,15 +9,17 @@ import img7 from "../assets/images/joinus.png";
 import Figure from "react-bootstrap/Figure";
 import Info1 from "../components/Info1";
 import "../assets/styles/styles.css";
+import Header from "../components/Header";
 
-function LandingPages() {
+function LogoutSession() {
   return (
     <>
+      <Header />
       <div className="container">
-        <div className="session">
-          <div className="container">
+        <div className="">
+          <div className="">
             <div className="row align-items-center my-5">
-              <div className="col-5 offset-1">
+              <div className="col-lg-5 offset-lg-1">
                 <h1 className="blue font">
                   Pusing <span className="orange">Menganggur?</span>
                 </h1>
@@ -30,15 +32,15 @@ function LandingPages() {
                   voluptatum!
                 </p>
               </div>
-              <div className="col-5">
-                <img src={img1} alt="" style={{ width: "500px" }} />
+              <div className="col-lg-5">
+                <img src={img1} alt="" style={{ width: "400px" }} />
               </div>
             </div>
             <div className="row align-items-center my-5">
-              <div className="col-5">
-                <img src={img2} alt="" style={{ width: "500px" }} />
+              <div className="col-lg-5">
+                <img src={img2} alt="" style={{ width: "400px" }} />
               </div>
-              <div className="col-5 offset-1">
+              <div className="col-lg-5 offset-lg-1">
                 <h1 className="blue font">
                   <span className="orange">Bingung</span> Cari Kerja?
                 </h1>
@@ -61,8 +63,8 @@ function LandingPages() {
             </h1>
             <br />
             <div className="row text-center mb-5">
-              <div className="col-3 ms-5 border border-warning rounded shadow p-3 mb-5 bg-body grow">
-                <div className="mt-3 py-2 bg-purple rounded text-light">
+              <div className="col-lg-3 ms-lg-5 border border-warning rounded shadow p-3 mb-5 bg-body grow">
+                <div className="mt-3 py-lg-2 bg-purple rounded text-light pop">
                   <h5 className="btn-orange">1</h5>
                   <hr />
                   Cari kerja
@@ -84,8 +86,8 @@ function LandingPages() {
                   </Figure.Caption>
                 </Figure>
               </div>
-              <div className="col-3 offset-1 border border-warning rounded shadow p-3 mb-5 bg-body grow">
-                <div className="mt-3 py-2 bg-purple rounded text-light">
+              <div className="col-lg-3 offset-lg-1 border border-warning rounded shadow p-3 mb-5 bg-body grow">
+                <div className="mt-lg-3 py-lg-2 bg-purple rounded text-light pop">
                   <h5 className="btn-orange">2</h5>
                   <hr />
                   Apply Lamaran
@@ -107,8 +109,8 @@ function LandingPages() {
                   </Figure.Caption>
                 </Figure>
               </div>
-              <div className="col-3 offset-1 border border-warning rounded shadow p-3 mb-5 bg-body grow">
-                <div className="mt-3 py-2 bg-purple rounded text-light">
+              <div className="col-lg-3 offset-lg-1 border border-warning rounded shadow p-3 mb-5 bg-body grow">
+                <div className="mt-lg-3 py-lg-2 bg-purple rounded text-light pop">
                   <h5 className="btn-orange">3</h5>
                   <hr />
                   Kerja
@@ -137,7 +139,7 @@ function LandingPages() {
                 <h1 className="orange">Temukan Pekerjaan</h1>
                 <h1>Impianmu</h1>
                 <h1 className="blue"> Sekarang Juga</h1>
-                <img src={img6} alt="" />
+                <img src={img6} alt="" style={{ width: "400px" }} />
                 <h2>
                   Bersama Perusahaan Berkualitas <br />
                   <span className="orange">Penyedia Lowongan Kerja</span>
@@ -156,7 +158,7 @@ function LandingPages() {
             <hr />
             <div className="container">
               <div className="row align-items-center">
-                <div className="col-6">
+                <div className="col-lg-6">
                   <h1 className="font">
                     Yuk Ga<span className="orange">bung</span>
                   </h1>
@@ -168,8 +170,8 @@ function LandingPages() {
                   </p>
                   <Info1 />
                 </div>
-                <div className="col-5 offset-1">
-                  <img src={img7} alt="" style={{ width: "400px" }} />
+                <div className="col-lg-5 offset-lg-1">
+                  <img src={img7} alt="" style={{ width: "380px" }} />
                 </div>
               </div>
             </div>
@@ -180,4 +182,4 @@ function LandingPages() {
   );
 }
 
-export default LandingPages;
+export default LogoutSession;

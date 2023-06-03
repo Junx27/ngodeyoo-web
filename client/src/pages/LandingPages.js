@@ -64,7 +64,7 @@ function LandingPages() {
             <br />
             <div className="row text-center mb-5">
               <div className="col-lg-3 ms-lg-5 border border-warning rounded shadow p-3 mb-5 bg-body grow">
-                <div className="mt-3 py-lg-2 bg-purple rounded text-light">
+                <div className="mt-3 py-lg-2 bg-purple rounded text-light pop">
                   <h5 className="btn-orange">1</h5>
                   <hr />
                   Cari kerja
@@ -87,7 +87,7 @@ function LandingPages() {
                 </Figure>
               </div>
               <div className="col-lg-3 offset-lg-1 border border-warning rounded shadow p-3 mb-5 bg-body grow">
-                <div className="mt-lg-3 py-lg-2 bg-purple rounded text-light">
+                <div className="mt-lg-3 py-lg-2 bg-purple rounded text-light pop">
                   <h5 className="btn-orange">2</h5>
                   <hr />
                   Apply Lamaran
@@ -110,7 +110,7 @@ function LandingPages() {
                 </Figure>
               </div>
               <div className="col-lg-3 offset-lg-1 border border-warning rounded shadow p-3 mb-5 bg-body grow">
-                <div className="mt-lg-3 py-lg-2 bg-purple rounded text-light">
+                <div className="mt-lg-3 py-lg-2 bg-purple rounded text-light pop">
                   <h5 className="btn-orange">3</h5>
                   <hr />
                   Kerja
