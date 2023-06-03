@@ -44,7 +44,7 @@ function Contact() {
               sed labore pariatur quas unde enim! Laudantium, rerum!
             </p>
           </div>
-          <div className="ms-4">
+          <div className="ms-4 mt-5">
             <h5 className="orange">Hubungi Kami</h5>
             <hr />
             <br />
@@ -53,7 +53,7 @@ function Contact() {
               <div>Tlp: 0987 1234 7876</div>
             </div>
           </div>
-          <div className="ms-4">
+          <div className="ms-4 mt-5">
             <h5 className="orange">Developer</h5>
             <hr />
             <br />

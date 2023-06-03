@@ -50,7 +50,7 @@ function App() {
       <div className="container">
         <div className="row text-start mt-5">
           <hr />
-          <div className="col-3">
+          <div className="col-lg-3">
             <h5 className="orange">ILOKA</h5>
             <p className="blue fw-light mt-3">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
@@ -59,20 +59,20 @@ function App() {
               ducimus, obcaecati eveniet voluptatem aperiam.
             </p>
           </div>
-          <div className="col-3">
+          <div className="col-lg-3">
             <h5 className="orange">Alamat</h5>
             <p className="blue fw-light mt-3">
               Jl. Letnan Jenderal S Parman No.55, Kedung Menjangan, Bancar, Kec.
               Purbalingga, Kabupaten Purbalingga, Jawa Tengah 53316
             </p>
           </div>
-          <div className="col-3">
+          <div className="col-lg-3">
             <h5 className="orange">Hubungi Kami</h5>
             <div className="blue fw-light mt-3">
               <div>Email: iloka@gmail.com</div>
               <div>Tlp: 0987 1234 7876</div>
               <div>Sosial Media:</div>
-              <div className="mt-2">
+              <div className="mt-2 mb-5">
                 <img className="sosial-media me-2" src={whatsapp} alt="" />
                 <img className="sosial-media me-2" src={facebook} alt="" />
                 <img className="sosial-media me-2" src={instagram} alt="" />
@@ -80,7 +80,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="col-3">
+          <div className="col-lg-3">
             <h5 className="orange">Developer</h5>
             <div className="blue fw-light mt-3">
               <ul>

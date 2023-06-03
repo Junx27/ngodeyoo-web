@@ -55,7 +55,7 @@ function Registration() {
   return (
     <>
       <Header />
-      <div className="container w-50 mt-5">
+      <div className="container mt-5">
         <h1 className="text-center mt-3 blue font">
           Registra<span className="orange">tion</span>
         </h1>

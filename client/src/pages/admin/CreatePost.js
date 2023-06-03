@@ -15,7 +15,6 @@ function CreatePost() {
   const [lulusan, setLulusan] = useState("");
   const [tinggi_badan, setTinggiBadan] = useState("");
   const [skill, setSkill] = useState("");
-  const [nama_perusahaan, setPublished] = useState("");
 
   async function createPost(e) {
     e.preventDefault();
@@ -35,7 +34,9 @@ function CreatePost() {
         user_id: session.user.id,
       },
     ]);
-    navigate("/homeadmin");
+    if (data) {
+      navigate("/homeadmin");
+    }
   }
 
   const [profile, setProfile] = useState();
@@ -74,7 +75,7 @@ function CreatePost() {
     <>
       <Header />
       <div className="container">
-        <div className="container mt-5" style={{ width: "800px" }}>
+        <div className="container mt-5">
           <h1 className="font text-center blue">
             Create <span className="orange">New Job</span>
           </h1>
@@ -135,7 +136,7 @@ function CreatePost() {
             <hr />
             <Form.Group className="mb-3 mt-3">
               <Form.Label>Jenis Kelamin</Form.Label>
-              <div className="blue">
+              <div className="blue mx-4">
                 <input
                   type="radio"
                   name="jenis_kelamin"

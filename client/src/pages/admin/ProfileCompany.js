@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
-import LogoCompany from "../../assets/images/logocompany.jpeg";
 import Card from "../../components/CardProfile";
 import supabase from "../../config/supabaseClientAdmin";
 import { useNavigate } from "react-router-dom";
@@ -57,7 +56,7 @@ function ProfileCompany() {
       <div className="container mt-3">
         <HeaderProfil />
         <div className="row mt-5">
-          <div className="col-6 me-3">
+          <div className="col-lg-6 me-lg-3">
             <h5 className="orange text-center">Riwayat Lowongan Pekerjaan</h5>
             <hr />
             {posts &&
@@ -67,7 +66,7 @@ function ProfileCompany() {
                 </div>
               ))}
           </div>
-          <div className="col-5 border-start">
+          <div className="col-lg-5 border-start">
             <h5 className="orange text-center">Daftar Pelamar Kerja</h5>
             <hr />
             <Table striped bordered hover>
@@ -87,8 +86,8 @@ function ProfileCompany() {
                     <button className="btn btn-success me-2">Unduh</button>
                   </td>
                   <td>
-                    <button className="btn btn-success me-2">YES</button>
-                    <button className="btn btn-danger">NO</button>
+                    <button className="btn btn-success me-3 mb-2">YES</button>
+                    <button className="btn btn-danger mb-2">NO</button>
                   </td>
                 </tr>
                 <tr>
@@ -98,8 +97,8 @@ function ProfileCompany() {
                     <button className="btn btn-success me-2">Unduh</button>
                   </td>
                   <td>
-                    <button className="btn btn-success me-2">YES</button>
-                    <button className="btn btn-danger">NO</button>
+                    <button className="btn btn-success me-3 mb-2">YES</button>
+                    <button className="btn btn-danger mb-2">NO</button>
                   </td>
                 </tr>
               </tbody>

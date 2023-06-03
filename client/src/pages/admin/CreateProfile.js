@@ -36,7 +36,9 @@ function CreateProfile() {
         user_id: session.user.id,
       },
     ]);
-    navigate("/profilecompany");
+    if (data) {
+      navigate("/profilecompany");
+    }
   }
 
   return (

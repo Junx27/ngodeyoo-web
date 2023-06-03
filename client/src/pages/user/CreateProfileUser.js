@@ -33,7 +33,9 @@ function CreateProfileUser() {
         user_id: session.user.id,
       },
     ]);
-    navigate("/profile");
+    if (data) {
+      navigate("/profile");
+    }
   }
 
   let navigate = useNavigate();

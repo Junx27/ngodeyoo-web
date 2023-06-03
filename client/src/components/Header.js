@@ -6,7 +6,6 @@ import logoimg from "../assets/images/logo.png";
 import { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
 import ProfileName from "./ProfileName";
-import { BsBoxArrowRight } from "react-icons/bs";
 import Logout from "./LogoutUser";
 
 function Header() {
@@ -19,11 +18,6 @@ function Header() {
       setSession(session);
     });
   }, []);
-
-  function handleLogOut(e) {
-    const { data } = supabase.auth.signOut();
-    console.log(data);
-  }
 
   return (
     <div>

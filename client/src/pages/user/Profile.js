@@ -43,7 +43,7 @@ function Profile() {
       <Header />
       <div className="container position-relative">
         <div className="row">
-          <div className="col-8 ms-5 pt-3">
+          <div className="col-lg-8 ms-lg-5 pt-3">
             <div>
               <img src={backgroundlogo} alt="" className="hero" />
             </div>
@@ -106,7 +106,7 @@ function Profile() {
                 <button className="btn btn-danger ms-3">Delete</button>
               </div>
             </div>
-            <div className="shadow mt-5 border-bottom border-warning border-2 grow">
+            <div className="shadow mt-5 border-bottom border-warning border-2 grow mb-5">
               <h4 className="orange ms-3">PT Indotech</h4>
               <p className="ms-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
@@ -120,7 +120,7 @@ function Profile() {
               </div>
             </div>
           </div>
-          <div className="col-3 ms-3 pt-3">
+          <div className="col-lg-3 ms-3 pt-3">
             {profile &&
               profile.map((profile) => (
                 <div key={profile.id}>

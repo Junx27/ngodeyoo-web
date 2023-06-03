@@ -6,12 +6,9 @@ import logoimg from "../assets/images/logo.png";
 import { useEffect, useState } from "react";
 import supabase from "../config/supabaseClientAdmin";
 import ProfileName from "./ProfileNameAdmin";
-import { BsBoxArrowRight } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
 import Logout from "./LogoutAdmin";
 
 function Header() {
-  let navigate = useNavigate();
   const [session, setSession] = useState();
 
   useEffect(() => {
@@ -22,11 +19,6 @@ function Header() {
     });
   }, []);
 
-  function handleLogOut(e) {
-    const { data } = supabase.auth.signOut();
-    console.log(data);
-    navigate("/logout");
-  }
   return (
     <div>
       <Navbar sticky="top" bg="light" expand="lg">

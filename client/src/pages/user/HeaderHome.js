@@ -4,7 +4,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import logoimg from "../../assets/images/logo.png";
 import ProfileName from "../../components/ProfileName";
-import { BsBoxArrowRight } from "react-icons/bs";
 import supabase from "../../config/supabaseClient";
 import Logout from "../../components/LogoutUser";
 
@@ -23,9 +22,6 @@ function HeaderHome() {
 
     return () => subscription.unsubscribe();
   }, []);
-  function handleLogOut(e) {
-    const { data } = supabase.auth.signOut();
-  }
   return (
     <div>
       <Navbar sticky="top" bg="light" expand="lg">

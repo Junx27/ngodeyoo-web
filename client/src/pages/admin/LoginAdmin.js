@@ -32,7 +32,7 @@ function LoginAdmin() {
   return (
     <>
       <Header />
-      <div className="container w-50">
+      <div className="container">
         <h1 className="text-center mt-3 blue font">
           L<span className="orange">og</span>in Admin
         </h1>

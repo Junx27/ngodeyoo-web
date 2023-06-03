@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import sample_image from "../assets/images/sample_images.jpeg";
 import { IoMdCreate, IoIosFiling, IoIosListBox } from "react-icons/io";
@@ -20,7 +21,7 @@ function Card({ posts }) {
         <div className="col-6 ms-3">
           <div className="text-start">
             <h5 className="orange">
-              <IoIosFiling className="icon me-3" />
+              <IoIosFiling className="icon me-2" />
               Description
             </h5>
             <hr />
@@ -34,7 +35,7 @@ function Card({ posts }) {
             <br />
             <br />
             <h5 className="orange">
-              <IoIosListBox className="icon me-3" />
+              <IoIosListBox className="icon me-2" />
               Persyaratan :{" "}
             </h5>
             <hr />

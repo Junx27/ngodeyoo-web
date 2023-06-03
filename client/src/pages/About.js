@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Header from "../components/Header";
 
@@ -9,7 +9,7 @@ function About() {
       <div className="container">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-5 offset-1">
+            <div className="col-lg-5 offset-lg-1">
               <h1 className="blue font">
                 About <span className="orange">ILOKA</span>
               </h1>
@@ -22,25 +22,25 @@ function About() {
                 voluptatum!
               </p>
             </div>
-            <div className="col-5">
+            <div className="col-lg-5">
               <Player
                 autoplay={true}
                 loop
                 src="https://assets10.lottiefiles.com/packages/lf20_sqwEc44qxw.json"
-                style={{ height: "500px", width: "500px" }}
+                style={{ height: "400px", width: "400px" }}
               ></Player>
             </div>
           </div>
           <div className="row align-items-center">
-            <div className="col-5">
+            <div className="col-lg-5">
               <Player
                 autoplay={true}
                 loop
                 src="https://assets6.lottiefiles.com/packages/lf20_8etvTOtK4O.json"
-                style={{ height: "500px", width: "500px" }}
+                style={{ height: "400px", width: "400px" }}
               ></Player>
             </div>
-            <div className="col-5 offset-1">
+            <div className="col-lg-5 offset-lg-1">
               <h1 className="blue font">
                 <span className="orange">Tentang</span> Kami
               </h1>
@@ -56,7 +56,7 @@ function About() {
             <hr />
           </div>
           <div className="row align-items-center">
-            <div className="col-5 offset-1">
+            <div className="col-lg-5 offset-lg-1">
               <h1 className="blue font">
                 Kelebihan <span className="orange">ILOKA</span>
               </h1>
@@ -69,25 +69,25 @@ function About() {
                 voluptatum!
               </p>
             </div>
-            <div className="col-5">
+            <div className="col-lg-5">
               <Player
                 autoplay={true}
                 loop
                 src="https://assets6.lottiefiles.com/packages/lf20_1mA0i9a3PH.json"
-                style={{ height: "500px", width: "500px" }}
+                style={{ height: "400px", width: "400px" }}
               ></Player>
             </div>
           </div>
           <div className="row align-items-center">
-            <div className="col-5">
+            <div className="col-lg-5">
               <Player
                 autoplay={true}
                 loop
                 src="https://assets3.lottiefiles.com/packages/lf20_vCSa0OQQkd.json"
-                style={{ height: "500px", width: "500px" }}
+                style={{ height: "400px", width: "400px" }}
               ></Player>
             </div>
-            <div className="col-5 offset-1">
+            <div className="col-lg-5 offset-lg-1">
               <h1 className="blue font">
                 Yuk Berga<span className="orange">bung</span>
               </h1>
