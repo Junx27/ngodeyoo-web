@@ -31,7 +31,7 @@ function LogoutUser() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title className="orange">Are you sure to logout</Modal.Title>
+          <Modal.Title className="orange">Are you sure logout</Modal.Title>
         </Modal.Header>
         <Modal.Body className="blue text-center">
           Please confirm this button{" "}
