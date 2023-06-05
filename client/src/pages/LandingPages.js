@@ -139,7 +139,7 @@ function LandingPages() {
                 <h1 className="orange">Temukan Pekerjaan</h1>
                 <h1>Impianmu</h1>
                 <h1 className="blue"> Sekarang Juga</h1>
-                <img src={img6} alt="" style={{ width: "400px" }} />
+                <img src={img6} alt="" style={{ width: "300px" }} />
                 <h2>
                   Bersama Perusahaan Berkualitas <br />
                   <span className="orange">Penyedia Lowongan Kerja</span>
@@ -171,7 +171,7 @@ function LandingPages() {
                   <Info1 />
                 </div>
                 <div className="col-lg-5 offset-lg-1">
-                  <img src={img7} alt="" style={{ width: "380px" }} />
+                  <img src={img7} alt="" style={{ width: "300px" }} />
                 </div>
               </div>
             </div>
