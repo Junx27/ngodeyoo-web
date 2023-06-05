@@ -18,15 +18,18 @@ function Login() {
 
   function handleLogin(e) {
     e.preventDefault();
+    // if (!email) {
+    //   alert("masukan email");
+    // }
+    // if (!password) {
+    //   alert("masukan password");
+    // }
 
     const { data } = supabase.auth.signInWithPassword({
       email: email,
       password: password,
     });
-    console.log(data);
-    if (email !== { email } && password !== { password }) {
-      navigate("/home");
-    }
+    navigate("/profile");
   }
   let navigate = useNavigate();
   return (

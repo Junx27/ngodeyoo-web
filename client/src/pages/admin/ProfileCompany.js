@@ -45,9 +45,8 @@ function ProfileCompany() {
 
     return () => subscription.unsubscribe();
   }, []);
-
   if (!session) {
-    navigate("/login");
+    navigate("/");
   }
 
   return (

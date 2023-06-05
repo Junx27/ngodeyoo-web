@@ -51,13 +51,13 @@ function UpdateProfileUser() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const { data: update } = await supabase
+    const { data } = await supabase
       .from("profile")
       .update({
         nama: nama1,
         tempat_tgl_lahir: tempat_tgl_lahir1,
         alamat: alamat1,
-        tinggi_badan: tinggi_badan,
+        tinggi_badan: tinggi_badan1,
         berat_badan: berat_badan1,
         lulusan: lulusan1,
         pengalaman: pengalaman1,
@@ -94,6 +94,7 @@ function UpdateProfileUser() {
                 <Form.Group className="mb-3 mt-3">
                   <Form.Label>Nama Lengkap</Form.Label>
                   <Form.Control
+                    className="orange"
                     type="text"
                     placeholder=""
                     value={nama}
@@ -103,6 +104,7 @@ function UpdateProfileUser() {
                 <Form.Group className="mb-2 mt-3">
                   <Form.Label>Tempat/Tgl Lahir</Form.Label>
                   <Form.Control
+                    className="orange"
                     type="text"
                     placeholder=""
                     value={tempat_tgl_lahir}
@@ -112,6 +114,7 @@ function UpdateProfileUser() {
                 <Form.Group className="mb-2 mt-3">
                   <Form.Label>Alamat</Form.Label>
                   <Form.Control
+                    className="orange"
                     type="text"
                     placeholder=""
                     value={alamat}
@@ -121,6 +124,7 @@ function UpdateProfileUser() {
                 <Form.Group className="mb-3 mt-3">
                   <Form.Label>Tinggi Badan</Form.Label>
                   <Form.Control
+                    className="orange"
                     type="text"
                     placeholder=""
                     value={tinggi_badan}
@@ -130,6 +134,7 @@ function UpdateProfileUser() {
                 <Form.Group className="mb-3 mt-3">
                   <Form.Label>Berat Badan</Form.Label>
                   <Form.Control
+                    className="orange"
                     type="text"
                     placeholder=""
                     value={berat_badan}
@@ -139,6 +144,7 @@ function UpdateProfileUser() {
                 <Form.Group className="mb-3 mt-3">
                   <Form.Label>Lulusan</Form.Label>
                   <Form.Control
+                    className="orange"
                     type="text"
                     placeholder=""
                     value={lulusan}
@@ -148,6 +154,7 @@ function UpdateProfileUser() {
                 <Form.Group className="mb-3 mt-3">
                   <Form.Label>Pengalaman</Form.Label>
                   <Form.Control
+                    className="orange"
                     type="text"
                     placeholder=""
                     value={pengalaman}
@@ -157,6 +164,7 @@ function UpdateProfileUser() {
                 <Form.Group className="mb-3 mt-3">
                   <Form.Label>Keahlian</Form.Label>
                   <Form.Control
+                    className="orange"
                     type="text"
                     placeholder=""
                     value={keahlian}
@@ -166,6 +174,7 @@ function UpdateProfileUser() {
                 <Form.Group className="mb-3 mt-3">
                   <Form.Label>Bio</Form.Label>
                   <Form.Control
+                    className="orange"
                     type="text"
                     placeholder=""
                     value={bio}
@@ -265,8 +274,16 @@ function UpdateProfileUser() {
                   />
                 </Form.Group>
                 <div className="mb-3 mt-5 d-flex justify-content-end">
-                  <Button type="submit" onClick={handleSubmit}>
-                    Create Profile
+                  <Button
+                    type="submit"
+                    variant="danger"
+                    className="me-2"
+                    onClick={() => navigate("/profile")}
+                  >
+                    Cancel
+                  </Button>
+                  <Button type="submit" variant="info" onClick={handleSubmit}>
+                    Update Profile
                   </Button>
                 </div>
               </Form>

@@ -23,10 +23,7 @@ function LoginAdmin() {
       email: email,
       password: password,
     });
-    console.log(data);
-    if (email !== { email } && password !== { password }) {
-      navigate("/homeadmin");
-    }
+    navigate("/");
   }
   let navigate = useNavigate();
   return (

@@ -16,6 +16,14 @@ function CreateProfileUser() {
   const [keahlian, setKeahlian] = useState();
   const [bio, setBio] = useState();
 
+  function handleSubmit() {
+    if (nama === nama) {
+      navigate("/info");
+    } else {
+      createPost();
+    }
+  }
+
   async function createPost(e) {
     e.preventDefault();
 
@@ -33,8 +41,30 @@ function CreateProfileUser() {
         user_id: session.user.id,
       },
     ]);
+    navigate("/profile");
+  }
+
+  useEffect(() => {
+    updatePosts();
+  }, [updatePosts]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  async function updatePosts() {
+    const { data } = await supabase
+      .from("profile")
+      .select("*")
+      .eq("user_id", session.user.id)
+      .single();
     if (data) {
-      navigate("/profile");
+      setNama(data?.nama);
+      setTempat(data?.tempat_tgl_lahir);
+      setAlamat(data?.alamat);
+      setTinggiBadan(data?.tinggi_badan);
+      setBeratBadan(data?.berat_badan);
+      setLulusan(data?.lulusan);
+      setPengalaman(data?.pengalaman);
+      setKeahlian(data?.keahlian);
+      setBio(data?.bio);
     }
   }
 

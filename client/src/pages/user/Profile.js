@@ -12,6 +12,49 @@ import { useNavigate } from "react-router-dom";
 import { CiViewList, CiEdit } from "react-icons/ci";
 
 function Profile() {
+  const [nama, setNama] = useState();
+  const [tempat_tgl_lahir, setTempat] = useState();
+  const [alamat, setAlamat] = useState();
+  const [tinggi_badan, setTinggiBadan] = useState();
+  const [berat_badan, setBeratBadan] = useState();
+  const [lulusan, setLulusan] = useState();
+  const [pengalaman, setPengalaman] = useState();
+  const [keahlian, setKeahlian] = useState();
+  const [bio, setBio] = useState();
+  const [nama1, setNama1] = useState();
+  const [tempat_tgl_lahir1, setTempat1] = useState();
+  const [alamat1, setAlamat1] = useState();
+  const [tinggi_badan1, setTinggiBadan1] = useState();
+  const [berat_badan1, setBeratBadan1] = useState();
+  const [lulusan1, setLulusan1] = useState();
+  const [pengalaman1, setPengalaman1] = useState();
+  const [keahlian1, setKeahlian1] = useState();
+  const [bio1, setBio1] = useState();
+
+  useEffect(() => {
+    updatePosts();
+  }, [updatePosts]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  async function updatePosts() {
+    const { data } = await supabase
+      .from("profile")
+      .select("*")
+      .eq("user_id", session.user.id)
+      .single();
+    if (data) {
+      setNama(data?.nama);
+      setTempat(data?.tempat_tgl_lahir);
+      setAlamat(data?.alamat);
+      setTinggiBadan(data?.tinggi_badan);
+      setBeratBadan(data?.berat_badan);
+      setLulusan(data?.lulusan);
+      setPengalaman(data?.pengalaman);
+      setKeahlian(data?.keahlian);
+      setBio(data?.bio);
+    }
+  }
+
   let navigate = useNavigate();
   const [session, setSession] = useState();
   const [profile, setProfile] = useState();
@@ -72,12 +115,20 @@ function Profile() {
               <CiViewList className="icon" /> Riwayat Lamaran Kerja
             </span>
             <button
-              className="btn btn-info ms-3 mt-2"
+              className="btn btn-danger ms-3 mt-2"
               onClick={() => {
                 navigate("/createprofileuser");
               }}
             >
-              <CiEdit className="icon" /> Edit Profile
+              <CiEdit className="icon" /> Input Profile
+            </button>
+            <button
+              className="btn btn-info ms-3 mt-2"
+              onClick={() => {
+                navigate("/updateprofileuser");
+              }}
+            >
+              <CiEdit className="icon" /> Update Profile
             </button>
             <hr />
             <div className="shadow mt-5 border-bottom border-warning border-2 grow">
@@ -121,35 +172,25 @@ function Profile() {
             </div>
           </div>
           <div className="col-lg-3 ms-3 pt-3">
-            {profile &&
-              profile.map((profile) => (
-                <div key={profile.id}>
-                  <h5 className="biodata orange">Biodata</h5>
-                  <hr />
-                  Tempat/Tgl Lahir:{" "}
-                  <div className="font blue mt-2">
-                    {profile.tempat_tgl_lahir}
-                  </div>
-                  <hr />
-                  Alamat: <div className="font blue mt-2">{profile.alamat}</div>
-                  <hr />
-                  Tinggi Badan:{" "}
-                  <div className="font blue mt-2">{profile.tinggi_badan}</div>
-                  <hr />
-                  Berat Badan:{" "}
-                  <div className="font blue mt-2">{profile.berat_badan}</div>
-                  <hr />
-                  Lulusan:{" "}
-                  <div className="font blue mt-2">{profile.lulusan}</div>
-                  <hr />
-                  Pengalaman:{" "}
-                  <div className="font blue mt-2">{profile.pengalaman}</div>
-                  <hr />
-                  Keahlian:{" "}
-                  <div className="font blue mt-2">{profile.keahlian}</div>
-                  <hr />
-                </div>
-              ))}
+            <div>
+              <h5 className="biodata orange">Biodata</h5>
+              <hr />
+              Tempat/Tgl Lahir:{" "}
+              <div className="font blue mt-2">{tempat_tgl_lahir}</div>
+              <hr />
+              Alamat: <div className="font blue mt-2">{alamat}</div>
+              <hr />
+              Tinggi Badan: <div className="font blue mt-2">{tinggi_badan}</div>
+              <hr />
+              Berat Badan: <div className="font blue mt-2">{berat_badan}</div>
+              <hr />
+              Lulusan: <div className="font blue mt-2">{lulusan}</div>
+              <hr />
+              Pengalaman: <div className="font blue mt-2">{pengalaman}</div>
+              <hr />
+              Keahlian: <div className="font blue mt-2">{keahlian}</div>
+              <hr />
+            </div>
             <h5 className="biodata mt-5 orange">Contact</h5>
             <hr />
             <div className="text-center">
