@@ -80,7 +80,9 @@ function UpdateProfileUser() {
   }, []);
   return (
     <div>
-      <Header />
+      <div className="sticky-top">
+        <Header />
+      </div>
       <div className="container">
         <h1 className="font text-center blue">
           Update <span className="orange">Profile</span>

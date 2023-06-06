@@ -3,6 +3,7 @@ import supabase from "../../config/supabaseClientAdmin";
 import { useNavigate } from "react-router-dom";
 import LogoCompany from "../../assets/images/logocompany.jpeg";
 import { CiEdit } from "react-icons/ci";
+import Reset from "../../components/ResetProfileAdmin";
 
 function HeaderProfil() {
   let navigate = useNavigate();
@@ -61,18 +62,10 @@ function HeaderProfil() {
               </div>
             );
           })}
-        <div className="d-flex justify-content-end">
+        <div className="text-end">
+          <Reset />
           <button
-            className="btn btn-danger me-2"
-            onClick={() => {
-              navigate("/createprofile");
-            }}
-          >
-            <CiEdit className="icon me-2" />
-            Edit
-          </button>
-          <button
-            className="btn btn-info"
+            className="btn btn-info mt-2 ms-2"
             onClick={() => {
               navigate("/updateprofileadmin");
             }}

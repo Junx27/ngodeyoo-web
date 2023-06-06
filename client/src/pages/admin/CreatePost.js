@@ -73,7 +73,9 @@ function CreatePost() {
   }
   return (
     <>
-      <Header />
+      <div className="sticky-top">
+        <Header />
+      </div>
       <div className="container">
         <div className="container mt-5">
           <h1 className="font text-center blue">

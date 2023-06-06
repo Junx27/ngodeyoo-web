@@ -10,6 +10,7 @@ import supabase from "../../config/supabaseClient";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { CiViewList, CiEdit } from "react-icons/ci";
+import Login from "../../components/ResetProfileUser";
 
 function Profile() {
   const [nama, setNama] = useState();
@@ -21,15 +22,6 @@ function Profile() {
   const [pengalaman, setPengalaman] = useState();
   const [keahlian, setKeahlian] = useState();
   const [bio, setBio] = useState();
-  const [nama1, setNama1] = useState();
-  const [tempat_tgl_lahir1, setTempat1] = useState();
-  const [alamat1, setAlamat1] = useState();
-  const [tinggi_badan1, setTinggiBadan1] = useState();
-  const [berat_badan1, setBeratBadan1] = useState();
-  const [lulusan1, setLulusan1] = useState();
-  const [pengalaman1, setPengalaman1] = useState();
-  const [keahlian1, setKeahlian1] = useState();
-  const [bio1, setBio1] = useState();
 
   useEffect(() => {
     updatePosts();
@@ -83,7 +75,9 @@ function Profile() {
   }
   return (
     <>
-      <Header />
+      <div className="sticky-top">
+        <Header />
+      </div>
       <div className="container position-relative">
         <div className="row">
           <div className="col-lg-8 ms-lg-5 pt-3">
@@ -106,22 +100,15 @@ function Profile() {
                     <hr />
                   </div>
                   <p className="text-muted text-end shadow pe-2 pb-2">
-                    <span className="orange">Mastered Abilities: </span>
-                    {profile.bio}
+                    <span className="orange">Mastered Abilities: </span>"
+                    {profile.bio} "
                   </p>
                 </div>
               ))}
             <span className="btn btn-warning mt-2">
               <CiViewList className="icon" /> Riwayat Lamaran Kerja
             </span>
-            <button
-              className="btn btn-danger ms-3 mt-2"
-              onClick={() => {
-                navigate("/createprofileuser");
-              }}
-            >
-              <CiEdit className="icon" /> Input Profile
-            </button>
+            <Login />
             <button
               className="btn btn-info ms-3 mt-2"
               onClick={() => {

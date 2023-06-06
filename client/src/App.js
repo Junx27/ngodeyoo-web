@@ -22,12 +22,16 @@ import Admin from "./pages/admin/LoginAdmin";
 import ConfirmLogout from "./pages/ConfirmLogout";
 import UpdateUserProfile from "./pages/UpdateUserProfile";
 import UpdateAdminProfile from "./pages/UpdateAdminProfile";
+import Update from "./pages/Update";
+import ScrollToTop from "./components/ScrollTop";
 
 function App() {
   return (
     <div>
       <Router>
+        <ScrollToTop />
         <Routes>
+          <Route exact path="/:id" element={<Update />} />
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/signup" element={<SignUp />} />
           <Route exact path="/about" element={<About />} />

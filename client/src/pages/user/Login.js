@@ -37,7 +37,9 @@ function Login() {
   let navigate = useNavigate();
   return (
     <>
-      <Header />
+      <div className="sticky-top">
+        <Header />
+      </div>
       <div className="container">
         <h1 className="text-center mt-3 blue font">
           L<span className="orange">og</span>in
@@ -62,7 +64,7 @@ function Login() {
             Login
           </button>
           <div>
-            <div className="text-muted my-3">Belum Punya Akun</div>
+            <div className="text-muted my-3">Belum Punya Akun (user only) </div>
             <hr />
             <button
               className="btn btn-info"

@@ -1,27 +1,41 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { BsBoxArrowRight } from "react-icons/bs";
+import { CiEdit } from "react-icons/ci";
 import supabase from "../config/supabaseClientAdmin";
 import { useNavigate } from "react-router-dom";
 
 function LogoutAdmin() {
   let navigate = useNavigate();
   const [show, setShow] = useState(false);
+  const [session, setSession] = useState();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  function handleLogOut(e) {
-    const { data } = supabase.auth.signOut();
-    console.log(data);
-    navigate("/");
-  }
+  async function handleLogOut() {
+    const { data, error } = await supabase
+      .from("profile")
+      .delete()
+      .eq("user_id", session.user.id);
 
+    navigate("/createprofile");
+  }
+  useEffect(() => {
+    setSession(supabase.auth.getSession());
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
   return (
     <>
-      <button className="icon btn mb-2" href="/" onClick={handleShow}>
-        <BsBoxArrowRight />
+      <button
+        className="btn btn-danger mb-2 mt-3 ms-3"
+        href="/"
+        onClick={handleShow}
+      >
+        <CiEdit className="icon" /> Input Profile
       </button>
 
       <Modal

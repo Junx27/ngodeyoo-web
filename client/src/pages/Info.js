@@ -23,7 +23,9 @@ function Info() {
 
   return (
     <>
-      <Header />
+      <div className="sticky-top">
+        <Header />
+      </div>
       <div className="container mt-5">
         <div className="row">
           <div className="col-lg-4 me-lg-1 ms-lg-5 mb-5">

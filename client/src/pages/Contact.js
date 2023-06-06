@@ -4,7 +4,9 @@ import Header from "../components/Header";
 function Contact() {
   return (
     <div>
-      <Header />
+      <div className="sticky-top">
+        <Header />
+      </div>
       <div className="container shadow p-3">
         <div className=" text-start mt-5">
           <div className="ms-4">

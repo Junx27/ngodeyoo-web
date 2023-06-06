@@ -7,18 +7,13 @@ function AlertDismissibleExample() {
   let navigate = useNavigate();
   const [show, setShow] = useState(true);
 
-  function handleShow() {
-    navigate("/");
-    setShow(true);
-  }
-
   if (show) {
     return (
       <div style={{ height: "220px" }}>
         <Alert
           variant="danger"
           className="font orange text-center"
-          onClose={() => setShow(false)}
+          onClose={() => navigate("/")}
           dismissible
         >
           <Alert.Heading>
@@ -30,11 +25,7 @@ function AlertDismissibleExample() {
       </div>
     );
   }
-  return (
-    <Button onClick={handleShow} className="mt-5 d-flex mx-auto">
-      kembali Ke Homepage
-    </Button>
-  );
+  return <div></div>;
 }
 
 export default AlertDismissibleExample;

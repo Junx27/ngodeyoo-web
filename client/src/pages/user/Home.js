@@ -30,7 +30,9 @@ function Home() {
 
   return (
     <>
-      <Header />
+      <div className="sticky-top">
+        <Header />
+      </div>
       <div className="container">
         <>
           {session ? (

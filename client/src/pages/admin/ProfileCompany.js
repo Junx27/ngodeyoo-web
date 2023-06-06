@@ -51,7 +51,9 @@ function ProfileCompany() {
 
   return (
     <>
-      <Header />
+      <div className="sticky-top">
+        <Header />
+      </div>
       <div className="container mt-3">
         <HeaderProfil />
         <div className="row mt-5">

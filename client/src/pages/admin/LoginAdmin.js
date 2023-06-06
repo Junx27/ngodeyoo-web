@@ -37,7 +37,9 @@ function LoginAdmin() {
   let navigate = useNavigate();
   return (
     <>
-      <Header />
+      <div className="sticky-top">
+        <Header />
+      </div>
       <div className="container">
         <h1 className="text-center mt-3 blue font">
           L<span className="orange">og</span>in Admin
@@ -60,6 +62,18 @@ function LoginAdmin() {
           <button className="btn btn-primary me-5" onClick={handleLogin}>
             Login
           </button>
+          <div>
+            <div className="text-muted my-3">Login Sebagai User</div>
+            <hr />
+            <button
+              className="btn btn-warning"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              User
+            </button>
+          </div>
         </Form>
       </div>
     </>
