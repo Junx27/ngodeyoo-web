@@ -14,18 +14,20 @@ function AlertDismissibleExample() {
 
   if (show) {
     return (
-      <Alert
-        variant="danger"
-        className="font orange"
-        onClose={() => setShow(false)}
-        dismissible
-      >
-        <Alert.Heading>
-          <span className="blue">Your</span> Email{" "}
-          <span className="blue">and</span> Password{" "}
-          <span className="blue">Incorrect</span>
-        </Alert.Heading>
-      </Alert>
+      <div style={{ height: "220px" }}>
+        <Alert
+          variant="danger"
+          className="font orange text-center"
+          onClose={() => setShow(false)}
+          dismissible
+        >
+          <Alert.Heading>
+            <span className="blue">Your</span> Email{" "}
+            <span className="blue">and</span> Password{" "}
+            <span className="blue">Incorrect</span>
+          </Alert.Heading>
+        </Alert>
+      </div>
     );
   }
   return (
