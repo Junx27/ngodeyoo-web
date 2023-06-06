@@ -65,7 +65,9 @@ function UpdateProfileUser() {
         bio: bio1,
       })
       .eq("user_id", session.user.id);
-    navigate("/profile");
+    if (update) {
+      navigate("/profile");
+    }
   }
 
   let navigate = useNavigate();

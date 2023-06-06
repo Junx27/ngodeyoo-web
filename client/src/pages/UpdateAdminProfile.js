@@ -75,7 +75,7 @@ function CreateAdminProfile() {
           </h1>
           <hr />
           <div className="row">
-            <div className="col-6">
+            <div className="col-lg-6">
               <h2 className="orange text-center mt-2">Your Profile</h2>
               <Form
                 className="border border-warning  rounded p-5 mt-5 shadow p-3 mb-5 bg-body"
@@ -101,7 +101,7 @@ function CreateAdminProfile() {
                 </Form.Group>
               </Form>
             </div>
-            <div className="col-6">
+            <div className="col-lg-6">
               <h2 className="blue text-center mt-2">New Profile</h2>
               <Form className="border border-warning  rounded p-5 mt-5 shadow p-3 mb-5 bg-body">
                 <Form.Group className="mb-3" controlId="formBasicEmail">

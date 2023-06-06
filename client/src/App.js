@@ -108,8 +108,8 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="text-muted-footer text-center mt-3">
-        Copyright@ILOKA2023
+      <div className="text-muted-footer text-center mt-3 mb-auto py-3">
+        Copyright &copy; 2023 ILOKA
       </div>
     </div>
   );

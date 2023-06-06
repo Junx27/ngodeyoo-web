@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import supabase from "../../config/supabaseClientAdmin";
 import { useNavigate } from "react-router-dom";
 import LogoCompany from "../../assets/images/logocompany.jpeg";
+import { CiEdit } from "react-icons/ci";
 
 function HeaderProfil() {
   let navigate = useNavigate();
@@ -62,12 +63,22 @@ function HeaderProfil() {
           })}
         <div className="d-flex justify-content-end">
           <button
-            className="btn btn-info"
+            className="btn btn-danger me-2"
             onClick={() => {
               navigate("/createprofile");
             }}
           >
-            edit
+            <CiEdit className="icon me-2" />
+            Edit
+          </button>
+          <button
+            className="btn btn-info"
+            onClick={() => {
+              navigate("/updateprofileadmin");
+            }}
+          >
+            <CiEdit className="icon me-2" />
+            Update
           </button>
         </div>
       </div>

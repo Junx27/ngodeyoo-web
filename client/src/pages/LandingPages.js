@@ -16,46 +16,42 @@ function LandingPages() {
     <>
       <Header />
       <div className="container">
-        <div className="">
-          <div className="">
-            <div className="row align-items-center my-5">
-              <div className="col-lg-5 offset-lg-1">
-                <h1 className="blue font">
-                  Pusing <span className="orange">Menganggur?</span>
-                </h1>
-                <hr />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Laborum reprehenderit excepturi, magnam ut odit odio.
-                  Assumenda repellendus inventore minima possimus. Consequatur
-                  cumque dolores, voluptates illum suscipit dicta cupiditate eos
-                  voluptatum!
-                </p>
-              </div>
-              <div className="col-lg-5">
-                <img src={img1} alt="" style={{ width: "400px" }} />
-              </div>
-            </div>
-            <div className="row align-items-center my-5">
-              <div className="col-lg-5">
-                <img src={img2} alt="" style={{ width: "400px" }} />
-              </div>
-              <div className="col-lg-5 offset-lg-1">
-                <h1 className="blue font">
-                  <span className="orange">Bingung</span> Cari Kerja?
-                </h1>
-                <hr />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Laborum reprehenderit excepturi, magnam ut odit odio.
-                  Assumenda repellendus inventore minima possimus. Consequatur
-                  cumque dolores, voluptates illum suscipit dicta cupiditate eos
-                  voluptatmkjih
-                </p>
-              </div>
-              <hr />
-            </div>
+        <div>
+        <div className="row align-items-center my-5">
+          <div className="col-sm-12 col-md-5 col-lg-5 col-xl-5 offset-md-1 offset-lg-1 offset-xl-1">
+            <h1 className="blue font">
+              Pusing <span className="orange">Menganggur?</span>
+            </h1>
+            <hr />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              reprehenderit excepturi, magnam ut odit odio. Assumenda
+              repellendus inventore minima possimus. Consequatur cumque dolores,
+              voluptates illum suscipit dicta cupiditate eos voluptatum!
+            </p>
           </div>
+          <div className="col-sm-12 col-md-5 col-lg-5 col-xl-5 sizeimg">
+            <img src={img1} alt="" />
+          </div>
+        </div>
+        <div className="row align-items-center my-5">
+          <div className="col-sm-12 col-md-5 col-lg-5 col-xl-5 offset-md-1 offset-lg-1 offset-xl-1 order-sm-first order-md-last order-lg-last order-xl-last">
+            <h1 className="blue font">
+              <span className="orange">Bingung</span> Cari Kerja?
+            </h1>
+            <hr />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              reprehenderit excepturi, magnam ut odit odio. Assumenda
+              repellendus inventore minima possimus. Consequatur cumque dolores,
+              voluptates illum suscipit dicta cupiditate eos voluptatmkjih
+            </p>
+          </div>
+          <div className="col-sm-12 col-md-5 col-lg-5 col-xl-5 sizeimg">
+            <img src={img2} alt="" />
+          </div>
+        </div>
+        <hr />
           <div className="container mt-3 mb-5">
             <h1 className="text-center mb-5 font">
               Bagaimana Cara Mendapat Kerja di{" "}

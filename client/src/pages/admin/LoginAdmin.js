@@ -8,6 +8,7 @@ import Header from "../../components/HeaderAdmin";
 function LoginAdmin() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [formError, setFormError] = useState(null);
 
   function handleEmail(e) {
     setEmail(e.target.value);
@@ -18,13 +19,21 @@ function LoginAdmin() {
 
   function handleLogin(e) {
     e.preventDefault();
-
+    if (!email) {
+      setFormError("Masukan Email");
+      return;
+    }
+    if (!password) {
+      setFormError("Masukan Password");
+      return;
+    }
     const { data } = supabase.auth.signInWithPassword({
       email: email,
       password: password,
     });
-    navigate("/");
+    navigate("/homeadmin");
   }
+
   let navigate = useNavigate();
   return (
     <>
@@ -36,6 +45,7 @@ function LoginAdmin() {
         <hr />
         <Form className="border border-warning  rounded p-5 mt-5 shadow p-3 mb-5 bg-body">
           <Form.Group className="mb-3" controlId="formBasicEmail">
+            <p className="mb-3 span">{formError}</p>
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" value={email} onChange={handleEmail} />
           </Form.Group>

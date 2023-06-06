@@ -3,8 +3,9 @@
 .span {
   text-align: center;
   color: white;
-  font-size: 15px;
+  font-size: 16px;
   background-color: red;
+  border-radius: 5px;
 }
 
 .icon {
@@ -154,6 +155,12 @@
   height: auto;
   align-items: center;
 }
+.sizeimg img {
+  width: 480px;
+}
+.lottipleyer {
+  width: 480px;
+}
 
 @media all and (min-width: 320px) and (max-width: 767px) {
   .container-event {
@@ -180,6 +187,12 @@
     margin-left: 55px;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+  .sizeimg img {
+    width: 100%;
+  }
+  .lottipleyer {
+    width: 100%;
   }
 }
 .text-muted-footer {

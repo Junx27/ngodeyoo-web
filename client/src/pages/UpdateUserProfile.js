@@ -87,7 +87,7 @@ function UpdateProfileUser() {
         </h1>
         <hr />
         <div className="row">
-          <div className="col-6">
+          <div className="col-lg-6">
             <h2 className="orange text-center">Your profile</h2>
             <div className="container mt-5">
               <Form className="border border-warning  rounded p-5 mt-5 shadow p-3 mb-5 bg-body">
@@ -188,7 +188,7 @@ function UpdateProfileUser() {
               </Form>
             </div>
           </div>
-          <div className="col-6">
+          <div className="col-lg-6">
             <h2 className="blue text-center">New profile</h2>
             <div className="container mt-5">
               <Form className="border border-warning  rounded p-5 mt-5 shadow p-3 mb-5 bg-body">
