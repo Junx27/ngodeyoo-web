@@ -35,7 +35,7 @@ function SignUp() {
   return (
     <div>
       <div className="container w-50">
-        Upload and Deploy in Vercel
+        Upload and Deploy in Vercel not redeploy
         <h2>Create Data</h2>
         <input
           type="text"
