@@ -92,7 +92,7 @@ function EditPostAdmin() {
   }, []);
   return (
     <div className="row">
-      <div className="col-6">
+      <div className="col-lg-6">
         <div className="container">
           <div className="container">
             <h1 className="font text-center blue">
@@ -163,7 +163,7 @@ function EditPostAdmin() {
           </div>
         </div>
       </div>
-      <div className="col-6">
+      <div className="col-lg-6">
         <div className="container">
           <div className="container">
             <h1 className="font text-center blue">
