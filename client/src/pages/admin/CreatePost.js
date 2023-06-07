@@ -34,9 +34,7 @@ function CreatePost() {
         user_id: session.user.id,
       },
     ]);
-    if (data) {
-      navigate("/homeadmin");
-    }
+    navigate("/homeadmin");
   }
 
   const [profile, setProfile] = useState();

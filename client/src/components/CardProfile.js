@@ -2,8 +2,10 @@
 import React from "react";
 import sample_image from "../assets/images/sample_images.jpeg";
 import { IoMdCreate, IoIosFiling, IoIosListBox } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 function Card({ posts }) {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="row mb-5">
@@ -12,7 +14,10 @@ function Card({ posts }) {
             <img src={sample_image} className="img-thumbnail rounded" />
             <h5 className="orange mt-3">{posts.judul_pekerjaan}</h5>
             <p className="text-muted">Published by {posts.nama_perusahaan}</p>
-            <button className="btn bg-orange-btn bg-orange-hover-btn mt-2">
+            <button
+              className="btn bg-orange-btn bg-orange-hover-btn mt-2"
+              onClick={() => navigate("/editpostadmin/" + posts.id)}
+            >
               <IoMdCreate className="icon me-3" />
               Edit
             </button>

@@ -24,6 +24,7 @@ import UpdateUserProfile from "./pages/UpdateUserProfile";
 import UpdateAdminProfile from "./pages/UpdateAdminProfile";
 import Update from "./pages/Update";
 import ScrollToTop from "./components/ScrollTop";
+import EditPostAdmin from "./pages/EditPostAdmin";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Router>
         <ScrollToTop />
         <Routes>
+          <Route exact path="/editpostadmin/:id" element={<EditPostAdmin />} />
           <Route exact path="/:id" element={<Update />} />
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/signup" element={<SignUp />} />
