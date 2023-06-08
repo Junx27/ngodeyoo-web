@@ -15,10 +15,50 @@ function CreatePost() {
   const [lulusan, setLulusan] = useState("");
   const [tinggi_badan, setTinggiBadan] = useState("");
   const [skill, setSkill] = useState("");
+  const [formError, setFormError] = useState(null);
 
   async function createPost(e) {
     e.preventDefault();
-
+    if (!profile) {
+      setFormError("Masukan Published");
+      return;
+    }
+    if (!judul_pekerjaan) {
+      setFormError("Masukan Judul Pekerjaan");
+      return;
+    }
+    if (!gaji) {
+      setFormError("Masukan Gaji");
+      return;
+    }
+    if (!tunjangan) {
+      setFormError("Masukan Tunjangan");
+      return;
+    }
+    if (!quantity) {
+      setFormError("Masukan Quantity");
+      return;
+    }
+    if (!jenis_kelamin) {
+      setFormError("Masukan Jenis Kelamin");
+      return;
+    }
+    if (!usia) {
+      setFormError("Masukan Usia");
+      return;
+    }
+    if (!lulusan) {
+      setFormError("Masukan Lulusan");
+      return;
+    }
+    if (!tinggi_badan) {
+      setFormError("Masukan Tinggi Bandan");
+      return;
+    }
+    if (!skill) {
+      setFormError("Masukan Skill");
+      return;
+    }
     const { data } = await supabase.from("posts").insert([
       {
         judul_pekerjaan,
@@ -201,6 +241,7 @@ function CreatePost() {
               <Form.Label>Published</Form.Label>
               <Form.Control type="text" placeholder="" value={profile} />
             </Form.Group>
+            <p className="mb-3 span">{formError}</p>
             <div className="mb-3 mt-5 d-flex justify-content-end">
               <Button type="submit" onClick={createPost}>
                 Create Post

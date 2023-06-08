@@ -90,6 +90,24 @@ function EditPostAdmin() {
       setSession(session);
     });
   }, []);
+
+  const [profile, setProfile] = useState();
+  useEffect(() => {
+    fetchProfile();
+  }, [fetchProfile]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  async function fetchProfile() {
+    const { data } = await supabase
+      .from("profile")
+      .select("*")
+      .eq("user_id", session.user.id)
+      .single();
+
+    if (data) {
+      setProfile(data?.nama);
+    }
+  }
   return (
     <div className="row">
       <div className="col-lg-6">
@@ -289,12 +307,7 @@ function EditPostAdmin() {
               </Form.Group>
               <Form.Group className="mb-3 mt-3">
                 <Form.Label>Published</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder=""
-                  value={nama_perusahaan1}
-                  onChange={(e) => setNamaPerusahaan1(e.target.value)}
-                />
+                <Form.Control type="text" placeholder="" value={profile} />
               </Form.Group>
               <div className="text-end mt-4">
                 <button
@@ -311,7 +324,6 @@ function EditPostAdmin() {
                     Delete
                   </button>
                 </Link>
-
                 <Link to="/profilecompany">
                   <button className="btn btn-info" onClick={handleUpdate}>
                     Update
