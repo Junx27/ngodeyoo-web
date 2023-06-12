@@ -37,7 +37,9 @@ function SignUp() {
       <div className="container w-50">
         Upload and Deploy in Vercel test remote from tablet
         <div>test 1 from tablet again</div>
-        <div>test kedua from tablet</div>
+        <div>test kedua from tablet
+          test ketiga tablet
+        </div>
         <h2>Create Data</h2>
         <input
           type="text"
